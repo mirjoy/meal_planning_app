@@ -1,0 +1,12 @@
+<div id="hero-image">
+	<div id="front-page-signup">
+		<h1 class="front-page-text">DeListcious</h1>
+		<h4 class="front-page-text">Meal Plans in One Click</h4>
+		<div class="col-sm-4 col-sm-offset-4">
+			<%= form_for :user do |f| %>
+				<%= f.text_field :email, class: "form-control", placeholder: "Enter Your Email" %>
+				<%= f.submit 'Submit', class: "btn btn-default" %>
+			<% end %>
+		</div>
+	</div>
+</div>
