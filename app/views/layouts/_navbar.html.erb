@@ -1,4 +1,4 @@
-<nav class="navbar navbar-fixed-top" >
+<nav class="navbar navbar-inverse navbar-fixed-top" id="navbar" >
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -14,7 +14,8 @@
     <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
 
       <ul class="nav navbar-nav">
-        <li><%= link_to "Meal Plans",root_path %></li>
+        <li><%= link_to "Plan Meals", new_meal_path %></li>
+        <li><%= link_to "Current Plan", meal_plan_path %></li>
         <li><%= link_to "Favorites",root_path %></li>
         <li><%= link_to "Account", user_path(id: 1) %></li>
       </ul>

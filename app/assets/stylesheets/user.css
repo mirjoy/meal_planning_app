@@ -1,3 +1,20 @@
 .btn-room {
 	padding-bottom: 5px;
 }
+
+#account {
+	background-color: #B88C5F;
+	padding: 20px; 
+}
+
+#account-header{
+	font-family: 'Lobster', cursive !important;
+}
+
+.hated-food {
+	padding: 20px;
+}
+
+#hated-foods-list {
+	padding-bottom: 20px;
+}
