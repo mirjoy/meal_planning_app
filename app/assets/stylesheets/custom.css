@@ -1,0 +1,45 @@
+body {
+  padding-top: 50px;
+	font-family: 'Raleway', sans-serif !important;
+	background-color: #B88C5F !important;
+	color: #703A3A !important	;
+}
+
+h1 {
+  font-family: 'Lobster', cursive !important;
+
+}
+
+.hidden {
+  display: none;
+}
+
+#navbar {
+	background-color: #D2A176 !important;
+	border-color: #D2A176 !important;
+}
+
+#navbar a {
+	color: #ffffff;
+}
+
+#navbar a:hover {
+	color: #703A3A;
+}
+
+.navbar-brand {
+	font-family: 'Lobster', cursive !important;
+	font-size: 30px !important;
+}
+
+.navbar-toggle {
+	border-color: #703A3A !important;
+}
+
+.navbar-toggle:hover {
+	background-color: #703A3A !important;
+}
+
+.navbar-inverse .navbar-collapse {
+	border-color: #703A3A !important;
+}
