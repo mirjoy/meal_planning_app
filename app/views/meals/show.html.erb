@@ -5,7 +5,9 @@
 
 	<div class="row">
 		<div class="col-sm-4 meal-plan-img">
-			<%= image_tag("minestrone.jpg", height: "150", class: ) %>
+			<div class="image-background pull-right">
+				<%= image_tag("minestrone.jpg", height: "200") %>
+			</div>
 		</div>
 		<div class="col-sm-8">
 			<h2>Minestrone Soup</h2>
@@ -13,11 +15,10 @@
 			<p>Beans</p>
 			<p>Carrots</p>
 			<p>Broth</p>
-			<div class="btn-group">
-				<button type="button" class="btn btn-success">Find Another Recipe</button>			
-				<button type="button" class="btn btn-danger">Never Show Me This Recipe</button>	
+				<div class="btn-group">
+					<button type="button" class="btn btn-try-again">Find Another Recipe</button>			
+					<button type="button" class="btn btn-hate-it">Never Show Me This Recipe</button>	
 			</div>
 		</div>
 	</div>
-
 </div>

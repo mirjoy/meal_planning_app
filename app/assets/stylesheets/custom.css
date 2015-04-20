@@ -43,3 +43,17 @@ h1 {
 .navbar-inverse .navbar-collapse {
 	border-color: #703A3A !important;
 }
+
+.btn-try-again {
+	background-color: #28A8A8;
+	color: #ffffff;
+}
+
+.btn-try-again:hover {
+	background-color: #08A8A8;
+}
+
+.btn-hate-it {
+	background-color: #004e4e;
+	color: #ffffff;
+}
