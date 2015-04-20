@@ -1,1 +1,1 @@
-# meal_planning_app
+This is a personal project that was worked on over the course of 3 weeks. The object was to consume an API.
