@@ -5,6 +5,15 @@
 	padding: 20px;
 }
 
-.meal-plan-img {
-
+.image-background {
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
+  border: 5px solid #703A3A;
 }
+
+
