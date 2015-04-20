@@ -16,4 +16,9 @@
   border: 5px solid #703A3A;
 }
 
+.one-meal {
+  padding-bottom: 30px;
+  border-bottom: 2px dashed #703A3A;
+  margin-bottom: 20px;
+}
 
