@@ -20,6 +20,7 @@
   padding-bottom: 30px;
   border-bottom: 2px dashed #703A3A;
   margin-bottom: 20px;
+  width: 100%;
 }
 
 #grocery-list {
@@ -36,3 +37,5 @@
   max-width: 50px;
   position: relative;
 }
+
+

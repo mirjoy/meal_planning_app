@@ -3,6 +3,11 @@
     float: none !important;
     text-align: center !important; 
   }
+
+  .container img{
+    text-align: center !important;
+  }
+
 }
 
 body {
@@ -63,4 +68,8 @@ h1 {
 .btn-hate-it {
   background-color: #004e4e;
   color: #ffffff;
+}
+
+.make-me-center {
+  width: 100%;
 }
