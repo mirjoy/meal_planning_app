@@ -11,6 +11,10 @@
 	font-family: 'Lobster', cursive !important;
 }
 
+.hate-it {
+	background-color: #d3d3d3;
+}
+
 .hated-food {
 	padding: 20px;
 }

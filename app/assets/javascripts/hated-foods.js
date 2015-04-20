@@ -1,4 +1,6 @@
 $(document).ready(function(){
+
+
   toggleFoodList('#veggie-header', '#veggies');
   toggleFoodList('#protein-header', '#protein');
   toggleFoodList('#grains-header', '#grains');
@@ -15,5 +17,9 @@ $(document).ready(function(){
       $(foodList).toggleClass('hidden');
     });
   };
+
+   $('.hated-food').children().on('click', function(){
+    $(this).toggleClass('btn-hate-it');
+  });
 
 });
