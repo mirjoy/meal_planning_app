@@ -26,3 +26,13 @@
   padding-bottom: 40px;
 }
 
+.dropdown {
+  display:block;
+  text-align: center;
+}
+
+#favorite-dropdown {
+  min-width: 50px;
+  max-width: 50px;
+  position: relative;
+}
