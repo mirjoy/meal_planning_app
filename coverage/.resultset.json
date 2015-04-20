@@ -1,0 +1,16 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/miriam/Desktop/Turing/module_3/delistcious/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/miriam/Desktop/Turing/module_3/delistcious/app/models/user.rb": [
+        1,
+        1,
+        null
+      ]
+    },
+    "timestamp": 1429573319
+  }
+}
