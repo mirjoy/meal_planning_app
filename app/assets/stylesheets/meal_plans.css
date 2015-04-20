@@ -16,4 +16,23 @@
   border: 5px solid #703A3A;
 }
 
+.one-meal {
+  padding-bottom: 30px;
+  border-bottom: 2px dashed #703A3A;
+  margin-bottom: 20px;
+}
 
+#grocery-list {
+  padding-bottom: 40px;
+}
+
+.dropdown {
+  display:block;
+  text-align: center;
+}
+
+#favorite-dropdown {
+  min-width: 50px;
+  max-width: 50px;
+  position: relative;
+}
