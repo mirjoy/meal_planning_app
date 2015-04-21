@@ -14,7 +14,7 @@
       <img src="./assets/0.9.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2015-04-20T22:20:58-06:00">2015-04-20T22:20:58-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2015-04-21T13:35:04-06:00">2015-04-21T13:35:04-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -63,7 +63,7 @@
       <tr>
         <td class="strong"><a href="#b82afaaedf2594b5bb50eb7973aaab5a5522336e" class="src_link" title="app/models/user.rb">app/models/user.rb</a></td>
         <td class="red strong">33.33 %</td>
-        <td>17</td>
+        <td>20</td>
         <td>12</td>
         <td>4</td>
         <td>8</td>
@@ -148,7 +148,7 @@
       <tr>
         <td class="strong"><a href="#b82afaaedf2594b5bb50eb7973aaab5a5522336e" class="src_link" title="app/models/user.rb">app/models/user.rb</a></td>
         <td class="red strong">33.33 %</td>
-        <td>17</td>
+        <td>20</td>
         <td>12</td>
         <td>4</td>
         <td>8</td>
@@ -356,7 +356,7 @@
         <li class="covered" data-hits="1" data-linenumber="4">
           <span class="hits">1</span>
           
-          <code class="ruby">	validates :user_name, presence: true, uniqueness: true</code>
+          <code class="ruby">	validates :user_name, presence: true</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="5">
@@ -374,64 +374,82 @@
         <li class="missed" data-hits="0" data-linenumber="7">
           
           
-          <code class="ruby">    where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|</code>
+          <code class="ruby">  	user = User.find_or_create_by(provider: data.provider, uid: data.uid)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="8">
+        <li class="never" data-hits="" data-linenumber="8">
           
           
-          <code class="ruby">      user.provider = auth.provider</code>
+          <code class="ruby">      </code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="9">
           
           
-          <code class="ruby">      user.uid = auth.uid</code>
+          <code class="ruby">      user.provider = auth.provider</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="10">
           
           
-          <code class="ruby">      user.name = auth.info.name</code>
+          <code class="ruby">      user.uid = auth.uid</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="11">
           
           
-          <code class="ruby">      user.image = auth.info.image</code>
+          <code class="ruby">      user.user_name = auth.info.name</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="12">
           
           
-          <code class="ruby">      user.token = auth.credentials.token</code>
+          <code class="ruby">      user.image = auth.info.image</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="13">
           
           
-          <code class="ruby">      user.expires_at = Time.at(auth.credentials.expires_at)</code>
+          <code class="ruby">      user.token = auth.credentials.token</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="14">
+        <li class="never" data-hits="" data-linenumber="14">
           
           
-          <code class="ruby">      user.save!</code>
+          <code class="ruby">      # user.expires_at = Time.at(auth.credentials.expires_at)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="15">
+        <li class="missed" data-hits="0" data-linenumber="15">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">      user.save</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="16">
           
           
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="17">
+          
+          
+          <code class="ruby">   return user</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="18">
+          
+          
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="17">
+        <li class="never" data-hits="" data-linenumber="19">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="20">
           
           
           <code class="ruby">end</code>
