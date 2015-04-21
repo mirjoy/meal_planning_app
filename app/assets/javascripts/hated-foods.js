@@ -19,7 +19,7 @@ $(document).ready(function(){
   };
 
    $('.hated-food').children().on('click', function(){
-    $(this).toggleClass('btn-hate-it');
+    $(this).toggleClass('btn-danger');
   });
 
 });
