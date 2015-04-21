@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
 	validates :user_name, presence: true
 
 	def self.find_or_create_from_auth(data)
-		user = User.find_or_create_by(provider: data.provider, uid: data.uid)
+  	user = User.find_or_create_by(provider: data.provider, uid: data.uid)
       
       user.provider = auth.provider
       user.uid = auth.uid
@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
       # user.expires_at = Time.at(auth.credentials.expires_at)
       user.save
 
-      return user
-    end
+   return user
   end
+
 end
