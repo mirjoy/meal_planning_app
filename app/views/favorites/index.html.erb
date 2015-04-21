@@ -1,26 +1,19 @@
 <div class="container">
 	<div class="row">
-		<h1 class="text-center one-meal">This Week's Meal Plan</h1>
+		<h1 class="text-center one-meal">Your Favorites/h1>
 	</div>
 
 	<div class="row one-meal">
 		<div class="col-sm-4 text-center">
 			<div class="image-background">
 				<%= image_tag("minestrone.jpg", height: "200") %>
+
+			<div class="btn-group">
+					<button type="button" class="btn btn-try-again">Unfavorite</button>			
+			</div>
 			</div>
 		</div>
-		<div class="col-sm-8 text-left">
-			<h2>Minestrone Soup</h2>
-			<h4>Ingredients:</h4>
-			<p>Beans</p>
-			<p>Carrots</p>
-			<p>Broth</p>
 	
-				<div class="btn-group">
-					<button type="button" class="btn btn-try-again">Find Another Recipe</button>			
-					<button type="button" class="btn btn-hate-it">Never Show Me This Recipe</button>	
-			</div>
-		</div>
 	</div>
 
 	<div class="row one-meal">

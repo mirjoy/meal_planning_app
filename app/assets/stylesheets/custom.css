@@ -1,15 +1,3 @@
-@media screen and (max-width: 480px){
-  .pull-right { 
-    float: none !important;
-    text-align: center !important; 
-  }
-
-  .container img{
-    text-align: center !important;
-  }
-
-}
-
 body {
   padding-top: 50px;
   font-family: 'Raleway', sans-serif !important;
@@ -70,6 +58,3 @@ h1 {
   color: #ffffff;
 }
 
-.make-me-center {
-  width: 100%;
-}

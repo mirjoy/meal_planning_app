@@ -5,37 +5,37 @@
 		<div class="col-xs-4 col-xs-offset-4" id="front-page-input">
 			<%= form_for :user do |f| %>
 				<%= f.text_field :email, placeholder: "Enter Your Email", class: "form-control" %>
-				<%= f.submit 'Submit', class: "btn btn-default" %>
+				<%= f.submit 'Submit', class: "btn btn-default", id: "submit-btn" %>
 			<% end %>
 		</div>
 	</div>
 </div>
 
-<div> 
-	<div class="row front-page-description front-row">
-		<div class="col-sm-2 text-center">
-			<%= image_tag("white-wheat.png", height: "150", class: "front-page-image") %>
+<div class="row"> 
+	<div class="col-sm-4 front-page-description front-row">
+		<div class="col-sm-3 text-center">
+			<%= image_tag("white-wheat.png", height: "80", class: "text-center") %>
 		</div>
 		<div class="col-sm-9">
-			<h2 class="text-center">Enter your dietary restrictions</h2>
+			<h4>Enter your dietary restrictions</h4>
 		</div>
 	</div>
 
-	<div class="row front-page-description">
-		<div class="col-sm-3 pull-right make-me-center">
-			<%= image_tag("fork-knife-white.png", height: "150", class: "text-center") %>
+	<div class="col-sm-4 front-page-description">
+		<div class="col-sm-3 text-center">
+			<%= image_tag("fork-knife-white.png", height: "80", class: "text-center") %>
 		</div>
-		<div class="col-sm-9 pull-left">
-			<h2 class="text-center">Let us know how many meals you would like</h2>
+		<div class="col-sm-9">
+			<h4>Let us know how many meals you would like</h4>
 	 	</div>
 	</div>
 
-	<div class="row front-page-description front-row">
+	<div class="col-sm-4 front-page-description front-row">
 		<div class="col-sm-3 text-center">
-			<%= image_tag("list_ingredients.png", height: "150", class: "front-page-image") %>
+			<%= image_tag("list_ingredients.png", height: "80", class: "text-center") %>
 		</div>
-		<div class="col-sm-9 pull-right">
-			<h2 class="text-center">We'll give you a meal plan and grocery list!</h2>
+		<div class="col-sm-9">
+			<h4>We'll give you a meal plan and grocery list!</h4>
 		</div>
 	</div>
 </div>
