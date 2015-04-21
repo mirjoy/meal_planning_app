@@ -12,6 +12,7 @@ gem "uglifier", ">= 1.3.0"
 gem "faker"
 gem "bcrypt", "~> 3.1.7"
 gem "omniauth-facebook"
+gem "figaro"
 
 # Use Unicorn as the app server
 # gem "unicorn"
