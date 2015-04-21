@@ -20,7 +20,7 @@
         <li><%= link_to "Account", user_path(id: 1) %></li>
 
       <% if current_user %>
-        <li>Signed in as <strong><%= current_user.name %></strong>!</li>
+        <li>Signed in as <strong><%= current_user.user_name %></strong>!</li>
         <li><%= link_to "Sign out", signout_path, id: "sign_out" %></li>
       <% else %>
         <li><%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %></li>
