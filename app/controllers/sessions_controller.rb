@@ -17,6 +17,6 @@ class SessionsController < ApplicationController
 
   def sign_in
     session[:user_id] = @user.id
-    redirect_to :back, notice: "Sign in successful"
+    redirect_to root_path, notice: "Sign in successful"
   end
 end
