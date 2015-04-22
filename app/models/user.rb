@@ -10,8 +10,9 @@ class User < ActiveRecord::Base
     user.user_name = data.info.name
     user.token = data.credentials.token
     user.expires_at = Time.at(data.credentials.expires_at)
+    user.email = data.email
     user.save
-    
+
     return user
   end
 end

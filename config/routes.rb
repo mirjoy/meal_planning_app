@@ -14,4 +14,5 @@ Rails.application.routes.draw do
   resources :meals, except: :show
   resources :users
   resources :home, only: :index
+  resources :favorites, only: :index
 end
