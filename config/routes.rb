@@ -10,9 +10,11 @@ Rails.application.routes.draw do
 
   
   get "/meal-plan" => "meals#show"
+  get "/account" => "users#show"
 
+  resources :sessions, except: [:create, :destroy]
   resources :meals, except: :show
-  resources :users
+  resources :users, except: :show
   resources :home, only: :index
   resources :favorites, only: :index
 end
