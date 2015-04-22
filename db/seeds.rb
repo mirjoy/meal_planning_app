@@ -10,7 +10,6 @@ class Seeds
         user_name: Faker::Name.first_name,
         provider: "Facebook",
         email: Faker::Internet.email,
-        password: "password"
       )
     end
     p 'Users Created'
@@ -21,7 +20,6 @@ class Seeds
 			user_name: "miriam",
 			provider: "Facebook",
 			email: "miriam@example.com",
-			password: "password"
 			)
 	end
 
