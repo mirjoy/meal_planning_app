@@ -55,12 +55,13 @@
       "/Users/miriam/Desktop/Turing/module_3/delistcious/app/models/user.rb": [
         1,
         1,
-        null,
-        1,
         1,
         null,
         1,
         1,
+        null,
+        1,
+        1,
         1,
         1,
         1,
@@ -68,6 +69,10 @@
         1,
         null,
         1,
+        null,
+        null,
+        1,
+        0,
         null,
         null
       ],
@@ -86,6 +91,6 @@
         null
       ]
     },
-    "timestamp": 1429735054
+    "timestamp": 1429737309
   }
 }

@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  has_secure_password
   validates :user_name, presence: true
 
   def self.find_or_create_from_auth(data)
@@ -10,8 +11,12 @@ class User < ActiveRecord::Base
     user.token = data.credentials.token
     user.expires_at = Time.at(data.credentials.expires_at)
     user.email = data.info.email
-    user.save
+    user.save(validate: false)
 
     return user
+  end
+
+  def not_registered_with_facebook?
+    provider.nil?
   end
 end
