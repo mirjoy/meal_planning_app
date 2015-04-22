@@ -16,14 +16,13 @@
       <ul class="nav navbar-nav">
         <li><%= link_to "Plan Meals", new_meal_path %></li>
         <li><%= link_to "Current Plan", meal_plan_path %></li>
-        <li><%= link_to "Favorites",root_path %></li>
+        <li><%= link_to "Favorites",favorites_path %></li>
         <li><%= link_to "Account", user_path(id: 1) %></li>
 
       <% if current_user %>
-        <li>Signed in as <strong><%= current_user.user_name %></strong>!</li>
-        <li><%= link_to "Sign out", signout_path, id: "sign_out" %></li>
+          <li><%= link_to "Sign out", signout_path, id: "sign_out" %></li>
       <% else %>
-        <li><%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %></li>
+          <li><%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %></li>
       <% end %>
 
       </ul>

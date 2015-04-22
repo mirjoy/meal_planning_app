@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root to: "home#index"
 
-  get "auth/:provider/callback", to: "sessions#create", via: :all
+  match "auth/:provider/callback", to: "sessions#create", via: :all
   match "signout", to: "sessions#destroy", via: :all
   match "/auth/failure", via: :all do
     flash[:notice] = params[:message]
@@ -14,4 +14,5 @@ Rails.application.routes.draw do
   resources :meals, except: :show
   resources :users
   resources :home, only: :index
+  resources :favorites, only: :index
 end
