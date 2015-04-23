@@ -1,5 +1,8 @@
 <div class="container text-center col-sm-4 col-sm-offset-4">
+	<p><%= link_to image_tag("login_with_facebook.png", height: "100px"), "/auth/facebook", id: "facebook-login"  %></p>
+
 	<h1>Create An Account</h1>
+
 
 <div class="form-group ">
 	<%= form_for(:user, url: users_path, method: :post) do |f| %>
