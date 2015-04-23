@@ -3,12 +3,14 @@
 	<p><%= link_to image_tag("login_with_facebook.png", height: "100px"), "/auth/facebook", id: "facebook-login"  %></p>
 
 	<h1>Log In with Email</h1>
-	<%= form_for :session do |f| %>
+	<%= form_for(:session, method: :post )do |f| %>
 		<p><%= f.label :email, class: 'user-signin-form-label' %>
 		<%= f.text_field :email %><p>
 		<p><%= f.label :password, class: 'user-signin-form-label' %>
 		<%= f.text_field :password %><p>
-		<p><%= f.submit "Submit" %></p>
+		<p><%= f.submit "Submit", class: "btn btn-default" %></p>
 	<% end %>
+
+	<p id="register-link">Don't have an account? <%= link_to "Register here.", new_user_path %></p>
 
 </div>

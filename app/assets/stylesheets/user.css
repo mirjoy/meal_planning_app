@@ -34,3 +34,8 @@
 	text-align: right;
 	padding-right: 2px;
 }
+
+#register-link {
+	font-weight: bold;
+	padding-top: 10px;
+}
