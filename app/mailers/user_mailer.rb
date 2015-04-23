@@ -1,24 +1,11 @@
 class UserMailer < ApplicationMailer
-
-  # Subject can be set in your I18n file at config/locales/en.yml
-  # with the following lookup:
-  #
-  #   en.user_mailer.account_confirmation.subject
-  #
-  def account_confirmation
-    @greeting = "Hi"
-
-    mail to: "to@example.org"
+  def account_confirmation(user)
+    @user = user.user_name
+    mail to: user.email, subject: "Thanks for joining Delistcious!"
   end
 
-  # Subject can be set in your I18n file at config/locales/en.yml
-  # with the following lookup:
-  #
-  #   en.user_mailer.password_reset.subject
-  #
-  def password_reset
-    @greeting = "Hi"
-
-    mail to: "to@example.org"
+  def password_reset(user)
+    @user = user.user_name
+    mail to: user.email, subject: "Your Delistcious password has been reset"
   end
 end

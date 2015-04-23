@@ -24,6 +24,25 @@
         null,
         null
       ],
+      "/Users/miriam/Desktop/Turing/module_3/delistcious/app/mailers/user_mailer.rb": [
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/miriam/Desktop/Turing/module_3/delistcious/app/mailers/application_mailer.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
       "/Users/miriam/Desktop/Turing/module_3/delistcious/app/models/user.rb": [
         1,
         1,
@@ -149,6 +168,6 @@
         null
       ]
     },
-    "timestamp": 1429804683
+    "timestamp": 1429809533
   }
 }

@@ -1,32 +1,23 @@
 require "rails_helper"
 
 RSpec.describe UserMailer, type: :mailer do
-  describe "account_confirmation" do
-    let(:mail) { UserMailer.account_confirmation }
+  user = User.create(user_name: "richard", password: "hi@e.com", password_confirmation: "hi@e.com", email: "richard@example.com")
 
-    it "renders the headers" do
-      expect(mail.subject).to eq("Account confirmation")
-      expect(mail.to).to eq(["to@example.org"])
-      expect(mail.from).to eq(["from@example.com"])
-    end
+  describe "account confirmation email" do
+    let(:mail) { UserMailer.account_confirmation(user) }
 
-    it "renders the body" do
-      expect(mail.body.encoded).to match("Hi")
+    it "is sent" do
+      expect(mail.subject).to eq("Thanks for joining Delistcious!")
+      expect(mail.from).to eq(["miriam@example.com"])
     end
   end
 
-  describe "password_reset" do
-    let(:mail) { UserMailer.password_reset }
+  describe "password reset email" do
+    let(:mail) { UserMailer.password_reset(user) }
 
-    it "renders the headers" do
-      expect(mail.subject).to eq("Password reset")
-      expect(mail.to).to eq(["to@example.org"])
-      expect(mail.from).to eq(["from@example.com"])
-    end
-
-    it "renders the body" do
-      expect(mail.body.encoded).to match("Hi")
+    it "is sent" do
+      expect(mail.subject).to eq("Your Delistcious password has been reset")
+      expect(mail.from).to eq(["miriam@example.com"])
     end
   end
-
 end
