@@ -8,7 +8,7 @@ module OmniauthMacros
          name: "Miriam Joy"},
        credentials:
         {token:
-          "CAAUNZB0W6ps8BAK8xfgeczNuGnjwPIETAeHpGCN23l5hn1KAlZCUGlFtgsihMqn7O4S4RPUUeK2HSUdxTVGaO93loLmkZBjhz4AhSZBQatdrqpLVyHuhf9DxQ2HYLWjDdneydNuzA6gqsbZACxAZAa60sGe38hkZAoOmhpb1RRdoUgJw78ZCUyfbNgtBSieWpc228dKFIMfCR67tAxeZCfw4g",
+          "CAAUNZB0W6ps8BAK8xf",
          expires_at: 1434834483}
       })
   end
