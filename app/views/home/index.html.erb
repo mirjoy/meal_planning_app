@@ -2,11 +2,11 @@
 	<div id="front-page-signup">
 		<h1 class="front-page-text text-center">DeListcious</h1>
 		<h4 class="front-page-text" id="front-page-tagline">Meal Plans in One Click</h4>
-		<div class="col-xs-4 col-xs-offset-4" id="front-page-input">
-			<%= form_for :user do |f| %>
-				<%= f.text_field :email, placeholder: "Enter Your Email", class: "form-control" %>
-				<%= f.submit 'Submit', class: "btn btn-default", id: "submit-btn" %>
-			<% end %>
+		<div class="col-xs-4 col-xs-offset-4">
+			<div class="text-center btn-group">
+				<%= link_to "Create an Account", new_user_path, class: "btn btn-default" %>
+				<%= link_to "Log In", login_path, class: "btn btn-default" %>
+			</div>
 		</div>
 	</div>
 </div>

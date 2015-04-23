@@ -37,27 +37,26 @@
 					</div>
 				</div>
 			</div>
-		</div>
 
-		<div class="account-tabs">
-			<h3 class="text-center">How Many Favorites Should We Include?</h3>
-			<div class="dropdown">
- 				 <button class="btn btn-try-again dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
-    			Number of Favorites
-    			<span class="caret"></span>
-  			</button>
-			  <ul class="dropdown-menu" id="favorite-dropdown" role="menu" aria-labelledby="dropdownMenu1">
-          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">1</a></li>
-          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">2</a></li>
-          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">3</a></li>
-          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">4</a></li>
-			  </ul>
+			<div class="row">
+				<p class="text-center">How Many Favorites Should We Include?</p>
+ 				 <div class="col-sm-2 col-sm-offset-5">
+	 				 <select name="post[meals]" class="form-control text-center">
+	 				 		<option value="0">None</option>
+	 				 		<option value="1">1</option>
+	 				 		<option value="2">2</option>
+	 				 		<option value="3">3</option>
+	 				 		<option value="4">4</option>
+	 				 		<option value="5">5</option>
+	 				 		<option value="6">6</option>
+	 				 </select>
+ 				 </div>
 			</div>
-		</div>
+			<div class="row text-center"
+				<p><%= link_to "Get Your Meal Plan", root_path, class: "btn btn-hate-it", id: "get-plan-btn" %></p>
+			</div>
 
-		<div class="account-tabs text-center">
-			<h3>Get Your Meal Plan</h3>
-			<p class="btn btn-try-again">Submit</p>
-		</div>
+			</div>
+
 	</div>
 </div>
