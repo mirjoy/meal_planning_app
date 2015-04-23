@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_secure_password
+  
   validates :user_name, presence: true
 
   def self.find_or_create_from_auth(data)

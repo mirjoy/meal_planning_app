@@ -7,4 +7,10 @@ class ApplicationController < ActionController::Base
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
   helper_method :current_user
+
+  def sign_in
+    session[:user_id] = @user.id
+    redirect_to account_path, notice: "Sign in successful"
+  end
+  helper_method :sign_in
 end
