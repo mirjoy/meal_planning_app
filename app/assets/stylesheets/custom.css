@@ -57,3 +57,17 @@ h1 {
   color: #ffffff;
 }
 
+.no-link-color a{
+  color: #703A3A !important ;
+}
+
+.btn-dark {
+  background-color: #D2A176 !important;
+  color: #703A3A !important ;
+}
+
+.btn-dark:hover {
+  background-color: #703A3A !important;
+  color: #ffffff !important ;
+}
+

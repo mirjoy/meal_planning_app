@@ -39,3 +39,13 @@
 	font-weight: bold;
 	padding-top: 30px;
 }
+
+#login-btn {
+	width: 150px;
+}
+
+#forgot-pw {
+	font-weight: bold;
+	padding-top: 30px;
+	font-style: italic;
+}
