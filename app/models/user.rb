@@ -1,6 +1,12 @@
 class User < ActiveRecord::Base
   has_secure_password
   
+  before_save { self.email = email.downcase }
+  VALID_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  validates :email, presence: true, uniqueness: true
+                    
+  validates_format_of :email, with: VALID_REGEX, on: :create
+
   validates :user_name, presence: true
 
   def self.find_or_create_from_auth(data)

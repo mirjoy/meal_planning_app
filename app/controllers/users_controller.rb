@@ -3,16 +3,12 @@ class UsersController < ApplicationController
   end
 
   def create
-  	@user = User.new(user_name: params[:user][:user_name], 
-  											email: params[:user][:email],
-  											password: params[:user][:password],
-  											password_confirmation: params[:user][:password_confirmation]
-  											)
-  	if @user.save
-  		sign_in
-  	else
+  	@user = User.new(user_params)
+    if @user.save
+      sign_in
+    else
   		redirect_to :back
-  		flash[:danger] = "You are not authorized to access this page"
+  		flash[:danger] = "One of your fields is not correct."
   	end
   end
 
