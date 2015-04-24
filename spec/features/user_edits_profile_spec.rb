@@ -10,7 +10,7 @@ RSpec.describe "User edits profile", type: :feature do
 		expect(current_path).to eq(edit_user_path(user))
 	end
 
-	it "can see it's current information already in the form fields" do
+	xit "can see it's current information already in the form fields" do
 		user = create(:user)
 		allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 		visit edit_user_path(user)
