@@ -7,6 +7,7 @@ class SessionsController < ApplicationController
       authenticate_user_by_email
     else
       @user = User.find_or_create_from_auth(auth_hash)
+      UserMailer.account_confirmation(@user).deliver_now
       sign_in
     end
   end

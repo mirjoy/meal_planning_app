@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   def create
   	@user = User.new(user_params)
     if @user.save
-      UserMailer.account_confirmation(@user).deliver
+      UserMailer.account_confirmation(@user).deliver_now
       sign_in
     else
   		redirect_to :back
