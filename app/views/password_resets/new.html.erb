@@ -5,7 +5,6 @@
 	  <%= form_for(:password_reset, url: password_resets_path) do |f| %>
 	   <p> <%= f.label :email, class: 'user-signin-form-label' %>
 	    <%= f.email_field :email %><p>
-
 	    <%= f.submit "Submit", class: "btn btn-dark" %>
 	  <% end %>
 	</div>

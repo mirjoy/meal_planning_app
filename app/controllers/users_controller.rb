@@ -2,14 +2,28 @@ class UsersController < ApplicationController
   def new
   end
 
+  def edit
+  end
+
   def create
   	@user = User.new(user_params)
     if @user.save
+      UserMailer.account_confirmation(@user).deliver
       sign_in
     else
   		redirect_to :back
   		flash[:danger] = "One of your fields is not correct."
   	end
+  end
+
+  def update
+    if current_user.update(user_params)
+      flash[:alert] = "Your information has been updated."
+      redirect_to account_path
+    else
+      flash[:danger] = "You are missing some fields."
+      redirect_to :back
+    end
   end
 
   def show

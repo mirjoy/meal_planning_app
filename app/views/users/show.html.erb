@@ -2,7 +2,9 @@
 	<div id="account">
 	 <h1 class="text-center" id="account-header"><%= current_user.user_name %>'s Account</h1>
 	</div>
-
+	<p>Email: <%= current_user.email %></p>
+	<p>Phone Number: <%= current_user %></p>
+	<%= link_to "Edit My Profile", edit_user_path(current_user), class: "btn btn-dark" %>
 	<div>
 
 	</div>
