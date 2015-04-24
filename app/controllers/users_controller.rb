@@ -10,6 +10,9 @@ class UsersController < ApplicationController
     if @user.save
       UserMailer.account_confirmation(@user).deliver_now
       sign_in
+    elsif User.find_by(email: params[:user][:email])
+      redirect_to :back
+      flash[:danger] = "An account with that email already exists."
     else
   		redirect_to :back
   		flash[:danger] = "One of your fields is not correct."
