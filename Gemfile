@@ -13,7 +13,6 @@ gem "faker"
 gem "bcrypt", "~> 3.1.7"
 gem "omniauth-facebook"
 gem "figaro"
-gem 'sidekiq'
 
 # Use Unicorn as the app server
 # gem "unicorn"
