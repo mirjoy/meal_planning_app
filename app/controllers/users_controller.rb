@@ -12,10 +12,10 @@ class UsersController < ApplicationController
       sign_in
     elsif User.find_by(email: params[:user][:email])
       redirect_to :back
-      flash[:danger] = "An account with that email already exists."
+      flash[:alert] = "An account with that email already exists."
     else
   		redirect_to :back
-  		flash[:danger] = "One of your fields is not correct."
+  		flash[:alert] = "One of your fields is not correct."
   	end
   end
 
@@ -39,6 +39,6 @@ class UsersController < ApplicationController
   private
   
    def user_params
-    params.require(:user).permit(:user_name, :email, :password, :password_confirmation)
+    params.require(:user).permit(:user_name, :email, :phone_number, :password, :password_confirmation)
   end
 end

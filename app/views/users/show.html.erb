@@ -2,10 +2,16 @@
 	<div id="account">
 	 <h1 class="text-center" id="account-header"><%= current_user.user_name %>'s Account</h1>
 	</div>
-	<p>Email: <%= current_user.email %></p>
-	<p>Phone Number: <%= current_user %></p>
-	<%= link_to "Edit My Profile", edit_user_path(current_user), class: "btn btn-dark" %>
-	<div>
 
+	<div class="col-sm-4 col-sm-offset-4 text-center">
+		<p><span class="user-profile-label">User Name:</span> 
+			<span class="user-profile-field"><%= current_user.user_name %></span></p>
+		<p><span class="user-profile-label">Email:</span> 
+			<span class="user-profile-field"><%= current_user.email %></span></p>
+			<% if current_user.phone_number %>
+				<p><span class="user-profile-label">Phone Number:</span>  
+					<span class="user-profile-field"><%= current_user.phone_number %></span></p>
+			<% end %>
+		<%= link_to "Edit My Profile", edit_path(current_user), class: "btn btn-dark" %>
 	</div>
 </div>

@@ -7,7 +7,8 @@ class SessionsController < ApplicationController
       authenticate_user_by_email
     else
       @user = User.find_or_create_from_auth(auth_hash)
-      UserMailer.account_confirmation(@user).deliver_now
+      # only send if user is new
+      # UserMailer.account_confirmation(@user).deliver_now
       sign_in
     end
   end
@@ -24,16 +25,25 @@ class SessionsController < ApplicationController
   end
 
   def authenticate_user_by_email
-    if user_found_and_authenticated
+    if user_signed_in_with_facebook
+      flash[:alert] = "Did you sign up with Facebook?"
+      redirect_to :back
+    elsif user_found_and_authenticated
       sign_in
     else
-      flash[:danger] = "Wrong user name or password"
+      flash[:alert] = "Wrong user name or password"
       redirect_to :back
     end
   end
 
-   def user_found_and_authenticated
+  def user_found_and_authenticated
     @user = User.find_by(email: params[:session][:email])
     @user && @user.authenticate(params[:session][:password])
   end
+
+  def user_signed_in_with_facebook
+    @user = User.find_by(email: params[:session][:email])
+    @user && @user.provider == "facebook"
+  end
+
 end

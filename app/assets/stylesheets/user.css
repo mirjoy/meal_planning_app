@@ -45,3 +45,13 @@
 	padding-top: 30px;
 	font-style: italic;
 }
+
+.user-profile-label {
+	width: 200px;
+	text-align: right;
+}
+
+.user-profile-field {
+	width: 150px;
+	text-align: left;
+}

@@ -8,7 +8,7 @@ RSpec.describe UserMailer, type: :mailer do
 
     it "is sent" do
       expect(mail.subject).to eq("Thanks for joining Delistcious!")
-      expect(mail.from).to eq(["miriam@example.com"])
+      expect(mail.from).to eq(["mirjoy.moser@gmail.com"])
     end
   end
 
@@ -17,7 +17,7 @@ RSpec.describe UserMailer, type: :mailer do
 
     it "is sent" do
       expect(mail.subject).to eq("Your Delistcious password has been reset")
-      expect(mail.from).to eq(["miriam@example.com"])
+      expect(mail.from).to eq(["mirjoy.moser@gmail.com"])
     end
   end
 end
