@@ -18,7 +18,6 @@ RSpec.describe "User edits profile", type: :feature do
 		allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 		visit edit_path(user)
 
-		expect(page).to have_content(user.user_name)
-		fill_in "user[user_name]", with: "muppet"
+		expect(page).to have_selector("input[value='Richard']")
 	end
 end

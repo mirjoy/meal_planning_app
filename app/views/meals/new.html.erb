@@ -8,32 +8,36 @@
 
 			<div class="container text-center">
 			  <div id="hated-foods-list" class="tab-content">
-					<button type="button" class="btn btn-try-again" id="veggie-header">Fruits & Veggies</button>
-					<button type="button" class="btn btn-try-again" id="protein-header">Meat & Legumes</button>
-					<button type="button" class="btn btn-try-again" id="grains-header">Grains</button>
+					<button type="button" class="btn btn-try-again" id="specific-food-header">Specific Foods</button>
+					<button type="button" class="btn btn-try-again" id="allergy-header">Add An Allergy</button>
+					<button type="button" class="btn btn-try-again" id="diet-header">Add A Diet</button>
 			  	
-					<div class="col-xs-12 hated-food hidden" id="veggies">
-				 		<button type="button" class="btn btn-hate-it"><%= "Broccoli" %></button>
-						<button type="button" class="btn btn-hate-it"><%= "Sprouts" %></button>	
-						<button type="button" class="btn btn-hate-it"><%= "Cauliflower" %></button>	
-						<button type="button" class="btn btn-hate-it"><%= "Kale" %></button>	
-						<button type="button" class="btn btn-hate-it"><%= "Parsnips" %></button>	
+					<div class="col-xs-12 hated-food hidden" id="specific-food">
+				 		<%= form_for(:banned_food, url: banned_foods_path, method: :post) do |f| %>
+
+				 			<%= f.label :food_name, "Food to Exclude (ex: banana)" %>
+				 			<%= f.text_field :food_name %>
+				 			<%= f.submit "Submit", class: "btn btn-default" %>
+				 		<% end %>
+				 		<div id="banned-food-list">
+					 		<% if @banned_foods %>
+								<% @banned_foods.each do |food| %>
+									<button type="button" class="btn btn-danger"><%= food.name %></button>
+								<% end %>		
+							<% end %>					
+				 		</div>
 				 	</div>
 
-					<div class="col-xs-12 hated-food hidden" id="protein">
-				 		<button type="button" class="btn btn-hate-it"><%= "Pork" %></button>
-						<button type="button" class="btn btn-hate-it"><%= "Tofu" %></button>	
-						<button type="button" class="btn btn-hate-it"><%= "Kidney Beans" %></button>	
-						<button type="button" class="btn btn-hate-it"><%= "Seitan" %></button>	
-						<button type="button" class="btn btn-hate-it"><%= "Peanuts" %></button>	
+					<div class="col-xs-12 hated-food hidden" id="allergy">
+						<% @allergies.each do |allergy| %>
+							<button type="button" class="btn btn-hate-it"><%= allergy.name %></button>
+						<% end %>
 					</div>
 
-					<div class="col-xs-12 hated-food hidden" id="grains">
-					 	<button type="button" class="btn btn-hate-it"><%= "Quinoa" %></button>
-						<button type="button" class="btn btn-hate-it"><%= "Rye" %></button>	
-						<button type="button" class="btn btn-hate-it"><%= "Wheat" %></button>	
-						<button type="button" class="btn btn-hate-it"><%= "Amaranth" %></button>	
-						<button type="button" class="btn btn-hate-it"><%= "Oats" %></button>	 	
+					<div class="col-xs-12 hated-food hidden" id="diet">
+					 	<% @diets.each do |diet| %>
+							<button type="button" class="btn btn-hate-it"><%= diet.name %></button>
+						<% end %>	 	
 					</div>
 				</div>
 			</div>

@@ -21,4 +21,5 @@ Rails.application.routes.draw do
   resources :home,             only: :index
   resources :favorites,        only: :index
   resources :password_resets,  only: [:new, :create, :edit, :update]
+  resources :banned_foods,     only: [:create, :destroy]
 end

@@ -13,7 +13,7 @@ RSpec.describe "user tries to login", type: :feature do
     expect(page).to have_content("Log Out")
   end
 
-  it "is notified if trying to sign in with email and signed up with facebook" do
+  xit "is notified if trying to sign in with email and signed up with facebook" do
     user = User.create(user_name: "me", provider: "facebook", email: "me@example.com", password: nil)
     visit login_path
 

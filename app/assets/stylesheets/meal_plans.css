@@ -38,7 +38,10 @@
   position: relative;
 }
 
-
 #get-plan-btn {
   margin-top: 20px;
+}
+
+#banned-food-list {
+  margin-top: 10px; 
 }

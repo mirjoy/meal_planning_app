@@ -1,9 +1,9 @@
 $(document).ready(function(){
 
 
-  toggleFoodList('#veggie-header', '#veggies');
-  toggleFoodList('#protein-header', '#protein');
-  toggleFoodList('#grains-header', '#grains');
+  toggleFoodList('#specific-food-header', '#specific-food');
+  toggleFoodList('#allergy-header', '#allergy');
+  toggleFoodList('#diet-header', '#diet');
 
   function toggleFoodList(foodCategory, foodList){
     $(foodCategory).bind('click', function(){
