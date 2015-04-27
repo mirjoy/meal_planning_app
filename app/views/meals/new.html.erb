@@ -15,8 +15,8 @@
 					<div class="col-xs-12 hated-food hidden" id="specific-food">
 				 		<%= form_for(:banned_food, url: banned_foods_path, method: :post) do |f| %>
 
-				 			<%= f.label :food_name, "Food to Exclude (ex: banana)" %>
-				 			<%= f.text_field :food_name %>
+				 			<%= f.label :name, "Food to Exclude (ex: banana)" %>
+				 			<%= f.text_field :name %>
 				 			<%= f.submit "Submit", class: "btn btn-default" %>
 				 		<% end %>
 				 		<div id="banned-food-list">

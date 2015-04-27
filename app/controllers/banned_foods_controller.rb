@@ -1,9 +1,9 @@
 class BannedFoodsController < ApplicationController
 	def create
-		@new_food = BannedFood.find_or_create_by(name: params[:banned_food][:food_name])
+		@new_food = BannedFood.find_or_create_by(food_params)
 		if @new_food.save
 			current_user.banned_foods << @new_food
-			flash[:alert] = "You will no longer get recipes that include #{@new_food.name}" 
+			flash[:alert] = "You will no longer get recipes that include #{@new_food.name.pluralize}" 
 			redirect_to :back
 		else
 			flash[:error] = "Something went wrong. Please try again."
@@ -22,4 +22,9 @@ class BannedFoodsController < ApplicationController
 			redirect_to :back
 		end
 	end
+
+	private
+	 def food_params
+      params.require(:banned_food).permit(:name)
+   end
 end
