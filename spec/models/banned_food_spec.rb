@@ -19,4 +19,11 @@ RSpec.describe BannedFood, type: :model do
 
   	expect(new_food.name).to eq("pear")
   end
+
+  it "must be unique" do
+    new_food = BannedFood.create(name: "Pears")
+    new_food2 = BannedFood.new(name: "Pears")
+    new_food2.save
+    expect(new_food2.id).to eq(nil)
+  end
 end

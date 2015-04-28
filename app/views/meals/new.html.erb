@@ -13,21 +13,16 @@
 					<button type="button" class="btn btn-try-again" id="diet-header">Add A Diet</button>
 			  	
 					<div class="col-xs-12 hated-food hidden" id="specific-food">
-				 		<%= form_for(:banned_food, url: banned_foods_path, method: :post) do |f| %>
-
-				 			<%= f.label :name, "Food to Exclude (ex: banana)" %>
-				 			<%= f.text_field :name %>
-				 			<%= f.submit "Submit", class: "btn btn-default" %>
-				 		<% end %>
+						<%= render "banned_foods/new" %>
+						 
 				 		<div id="banned-food-list">
 					 		<% if @banned_foods %>
 								<% @banned_foods.each do |food| %>
-									<button type="button" class="btn btn-danger"><%= food.name %></button>
+									<button type="button" class="btn btn-danger one-banned-food" data-id="<%= food.id %>"><%= food.name %></button>
 								<% end %>		
 							<% end %>					
 				 		</div>
-				 	</div>
-
+				 </div>
 					<div class="col-xs-12 hated-food hidden" id="allergy">
 						<% @allergies.each do |allergy| %>
 							<button type="button" class="btn btn-hate-it"><%= allergy.name %></button>

@@ -14,8 +14,6 @@
     <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
 
       <ul class="nav navbar-nav">
-        <li><%= link_to "Plan Meals", new_meal_path %></li>
-        <li><%= link_to "Current Plan", meal_plan_path %></li>
       <% if current_user %>
           <%= render "layouts/user_navbar" %>
       <% else %>
