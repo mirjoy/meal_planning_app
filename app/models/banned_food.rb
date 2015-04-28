@@ -8,10 +8,10 @@ class BannedFood < ActiveRecord::Base
 	before_validation :singularize_name
 
 	def downcase_name
-		self.name = self.name.downcase
+		self.name = self.name.downcase if self.name
 	end
 
 	def singularize_name
-		self.name = self.name.singularize
+		self.name = self.name.singularize if self.name
 	end
 end
