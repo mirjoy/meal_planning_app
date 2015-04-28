@@ -25,13 +25,15 @@
 				 </div>
 					<div class="col-xs-12 hated-food hidden" id="allergy">
 						<% @allergies.each do |allergy| %>
-							<button type="button" class="btn btn-hate-it"><%= allergy.name %></button>
+							<button type="button" class="btn btn-hate-it" data-id="<%= allergy.id %>">
+								<%= allergy.name %></button>
 						<% end %>
 					</div>
 
 					<div class="col-xs-12 hated-food hidden" id="diet">
 					 	<% @diets.each do |diet| %>
-							<button type="button" class="btn btn-hate-it"><%= diet.name %></button>
+							<button type="button" class="btn btn-hate-it" data-id="<%= diet.id %>">
+								<%= diet.name %></button>
 						<% end %>	 	
 					</div>
 				</div>

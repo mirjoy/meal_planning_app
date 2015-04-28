@@ -16,27 +16,39 @@ $(document).ready(function(){
     });
   };
 
-   $('.hated-food').find('button').on('click', function(){
+  $('.hated-food').find('button').on('click', function(){
+
     $(this).toggleClass('btn-danger');
   });
 
   $("#specific-food").on("ajax:success", function(e, data, status, xhr) {
-    button = $('<button type="button" class="btn btn-danger one-banned-food" data-id=' + data.id + '>'+data.name+'</button>');
-    return $("#banned-food-list").append(button);
-  }).on("ajax:error", function(e, xhr, status, error) {
+      var button = $('<button type="button" class="btn btn-danger one-banned-food" data-id=' + data.id + '>'+data.name+'</button>');
+      return $("#banned-food-list").append(button);
+    }).on("ajax:error", function(e, xhr, status, error) {
+    
     return $("#banned-food-list").append("<p>ERROR</p>");
   });
 
 
+    // $(document).on("click", ".one-banned-food")
    $('.one-banned-food').on('click', function(e){
       var food_id = $(this).attr("data-id");
       
       $.ajax({
           method: "DELETE",
-          url: "/banned_foods" + "/" + food_id
+          url: "/banned_foods/" + food_id
         })
 
       return $(this).remove();
   });
 
+   $("#allergy button").on("click", function(){
+      var allergy_id = $(this).attr("data-id")
+      
+      $.ajax ({
+        method: "POST",
+        url: 
+      })
+
+   });
 });
