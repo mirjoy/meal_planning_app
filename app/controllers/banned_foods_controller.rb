@@ -16,7 +16,6 @@ class BannedFoodsController < ApplicationController
 
 		if UserBannedFood.find_by(user_id: current_user.id, 
 													 banned_food_id: @food_to_remove.id).destroy
-			flash[:alert] = "#{@food_to_remove.name} will not be included in your recipes"
 			render json: @food_to_remove
 		else
 			flash[:error] = "Something went wrong. Please try again."

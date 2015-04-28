@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.describe "a user can choose what foods to ban", type: :feature do 
 	it "can select allergies" do
 		user = build(:user)
+		allergy = create(:allergy)
 		allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
 		visit new_meal_path
