@@ -11,7 +11,7 @@
         null,
         null,
         1,
-        28,
+        29,
         13,
         13,
         13,
@@ -108,6 +108,12 @@
         null,
         null
       ],
+      "/Users/miriam/Desktop/Turing/module_3/delistcious/app/models/allergy.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
       "/Users/miriam/Desktop/Turing/module_3/delistcious/app/controllers/application_controller.rb": [
         1,
         null,
@@ -126,21 +132,15 @@
         1,
         null
       ],
-      "/Users/miriam/Desktop/Turing/module_3/delistcious/app/models/allergy.rb": [
-        1,
-        1,
-        1,
-        null
-      ],
       "/Users/miriam/Desktop/Turing/module_3/delistcious/app/controllers/meals_controller.rb": [
         1,
         1,
         null,
         null,
         1,
-        1,
-        1,
-        1,
+        2,
+        2,
+        2,
         null,
         null,
         null,
@@ -265,6 +265,6 @@
         null
       ]
     },
-    "timestamp": 1430253671
+    "timestamp": 1430253941
   }
 }
