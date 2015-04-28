@@ -17,8 +17,11 @@ $(document).ready(function(){
   };
 
   $('.hated-food').find('button').on('click', function(){
-
     $(this).toggleClass('btn-danger');
+  });
+
+  $("#favorite-number").bind('click', function(){
+    $("#favorite-number-selection").toggleClass('hidden')
   });
 
   $("#specific-food").on("ajax:success", function(e, data, status, xhr) {
