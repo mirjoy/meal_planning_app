@@ -41,5 +41,6 @@ group :development, :test do
   gem "awesome_print"
   gem "factory_girl_rails"
   gem "database_cleaner"
+  gem "capybara-email"
 end
 

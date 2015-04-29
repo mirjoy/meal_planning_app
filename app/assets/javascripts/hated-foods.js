@@ -25,7 +25,7 @@ $(document).ready(function(){
   });
 
   $("#specific-food").on("ajax:success", function(e, data, status, xhr) {
-      var button = $('<button type="button" class="btn btn-danger one-banned-food" data-id=' + data.id + '>'+data.name+'</button>');
+      var button = $('<button type="button" class="btn btn-danger one-banned-food" style="margin: 2px" data-id=' + data.id + '>'+data.name+'</button>');
       $("#banned-food-list").append(button);
       return $("input").val("")
     }).on("ajax:error", function(e, xhr, status, error) {
@@ -45,12 +45,13 @@ $(document).ready(function(){
   });
 
    $("#allergy button").on("click", function(){
-      var allergy_id = $(this).attr("data-id")
-      var allergy_name
+      // var allergy_id = $(this).attr("data-id");
+      var allergy_name = $(this).text();
       
       $.ajax ({
         method: "POST",
         url: "/allergies"
+
       })
 
    });

@@ -17,10 +17,10 @@ class User < ActiveRecord::Base
   validates :user_name, presence: true
 
   def self.find_or_create_from_auth(data)
+    
     user = User.find_or_create_by(provider: data.provider, 
-                                  uid: data.uid)
+                                  uid: data.uid)    
 
-    #if user.new? can i call a conditional here?
     user.provider = data.provider
     user.uid = data.uid
     user.user_name = data.info.name
@@ -41,4 +41,5 @@ class User < ActiveRecord::Base
   def downcase_email
     self.email = email.downcase
   end
+
 end

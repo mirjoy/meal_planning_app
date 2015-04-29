@@ -12,6 +12,7 @@ RSpec.describe "user tries to create an account", type: :feature do
 
 		expect(page).to have_content(user.user_name)
 		expect(page).to have_content("Favorites")
+		expect(ActionMailer::Base.deliveries.length).to eq(1)
   end
 
   it "will be notified if account already exists for that email" do

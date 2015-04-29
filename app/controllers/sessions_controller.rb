@@ -6,10 +6,7 @@ class SessionsController < ApplicationController
     if params[:session]
       authenticate_user_by_email
     else
-      @user = User.find_or_create_from_auth(auth_hash)
-      # only send if user is new
-      # UserMailer.account_confirmation(@user).deliver_now
-      sign_in
+      sign_in_with_facebook
     end
   end
 
@@ -19,6 +16,13 @@ class SessionsController < ApplicationController
   end
 
   protected
+
+  def sign_in_with_facebook
+    new_user?
+    @user = User.find_or_create_from_auth(auth_hash)
+    UserMailer.account_confirmation(@user).deliver_now if new_user?
+    sign_in
+  end
 
   def auth_hash
     request.env['omniauth.auth']
@@ -44,6 +48,10 @@ class SessionsController < ApplicationController
   def user_signed_in_with_facebook
     @user = User.find_by(email: params[:session][:email])
     @user && @user.provider == "facebook"
+  end
+
+  def new_user?
+    !User.find_by(provider: auth_hash.provider, uid: auth_hash.uid)
   end
 
 end

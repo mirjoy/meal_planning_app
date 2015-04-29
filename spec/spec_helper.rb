@@ -4,6 +4,7 @@ require "capybara-webkit"
 require "factory_girl_rails"
 require 'omniauth'
 require "./spec/support/omniauth_macros"
+require "capybara/email/rspec"
 
 SimpleCov.start "rails"
 CodeClimate::TestReporter.start
