@@ -33,8 +33,8 @@ RSpec.describe "a user can choose what foods to ban", type: :feature do
 	end
 end
 
-RSpec.describe "can type in a food and have it dynamically added to the banned list", type: :feature, js: true do 
-
+RSpec.describe "can type in a food and have it dynamically added to the banned list", 
+																														type: :feature, js: true do 
 	xit "user adds a food" do
 		user = create(:user)
 		allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
@@ -42,7 +42,6 @@ RSpec.describe "can type in a food and have it dynamically added to the banned l
 		click_link_or_button("Specific Foods")
 		fill_in "banned_food[name]", with: "Brussel sprouts"
 		find("#click-me").native.send_keys(:enter)
-		save_and_open_page
 		expect(page).to have_content("brussel sprouts")
 	end
 end
