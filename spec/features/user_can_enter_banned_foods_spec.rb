@@ -34,7 +34,7 @@ end
 
 RSpec.describe "can type in a food and have it dynamically added to the banned list", type: :feature, js: true do 
 
-	it "user adds a food" do
+	xit "user adds a food" do
 		user = create(:user)
 		allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 		visit new_meal_path
