@@ -3,6 +3,8 @@ class MealsController < ApplicationController
 	end
 
 	def new
-		
+		@banned_foods = current_user.banned_foods
+		@allergies = Allergy.all
+		@diets = Diet.all
 	end
 end

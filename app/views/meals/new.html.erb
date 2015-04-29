@@ -7,57 +7,58 @@
 		  </div>
 
 			<div class="container text-center">
-			  <div id="hated-foods-list" class="tab-content">
-					<button type="button" class="btn btn-try-again" id="veggie-header">Fruits & Veggies</button>
-					<button type="button" class="btn btn-try-again" id="protein-header">Meat & Legumes</button>
-					<button type="button" class="btn btn-try-again" id="grains-header">Grains</button>
+			  <div id="hated-foods-list">
+					<button type="button" class="btn btn-try-again" id="specific-food-header">Specific Foods</button>
+					<button type="button" class="btn btn-try-again" id="allergy-header">Add An Allergy</button>
+					<button type="button" class="btn btn-try-again" id="diet-header">Add A Diet</button>
 			  	
-					<div class="col-xs-12 hated-food hidden" id="veggies">
-				 		<button type="button" class="btn btn-hate-it"><%= "Broccoli" %></button>
-						<button type="button" class="btn btn-hate-it"><%= "Sprouts" %></button>	
-						<button type="button" class="btn btn-hate-it"><%= "Cauliflower" %></button>	
-						<button type="button" class="btn btn-hate-it"><%= "Kale" %></button>	
-						<button type="button" class="btn btn-hate-it"><%= "Parsnips" %></button>	
-				 	</div>
-
-					<div class="col-xs-12 hated-food hidden" id="protein">
-				 		<button type="button" class="btn btn-hate-it"><%= "Pork" %></button>
-						<button type="button" class="btn btn-hate-it"><%= "Tofu" %></button>	
-						<button type="button" class="btn btn-hate-it"><%= "Kidney Beans" %></button>	
-						<button type="button" class="btn btn-hate-it"><%= "Seitan" %></button>	
-						<button type="button" class="btn btn-hate-it"><%= "Peanuts" %></button>	
+					<div class="col-xs-12 hated-food hidden" id="specific-food">
+						<%= render "banned_foods/new" %>
+						 
+				 		<div id="banned-food-list" class="text-center">
+					 		<% if @banned_foods %>
+								<% @banned_foods.each do |food| %>
+									<button type="button" class="btn btn-danger one-banned-food" data-id="<%= food.id %>"><%= food.name %></button>
+								<% end %>		
+							<% end %>					
+				 		</div>
+				 </div>
+					<div class="col-xs-12 hated-food hidden" id="allergy">
+						<% @allergies.each do |allergy| %>
+							<button type="button" class="btn btn-hate-it" data-id="<%= allergy.id %>">
+								<%= allergy.name %></button>
+						<% end %>
 					</div>
 
-					<div class="col-xs-12 hated-food hidden" id="grains">
-					 	<button type="button" class="btn btn-hate-it"><%= "Quinoa" %></button>
-						<button type="button" class="btn btn-hate-it"><%= "Rye" %></button>	
-						<button type="button" class="btn btn-hate-it"><%= "Wheat" %></button>	
-						<button type="button" class="btn btn-hate-it"><%= "Amaranth" %></button>	
-						<button type="button" class="btn btn-hate-it"><%= "Oats" %></button>	 	
+					<div class="col-xs-12 hated-food hidden" id="diet">
+					 	<% @diets.each do |diet| %>
+							<button type="button" class="btn btn-hate-it" data-id="<%= diet.id %>">
+								<%= diet.name %></button>
+						<% end %>	 	
 					</div>
 				</div>
 			</div>
-		</div>
 
-		<div class="account-tabs">
-			<h3 class="text-center">How Many Favorites Should We Include?</h3>
-			<div class="dropdown">
- 				 <button class="btn btn-try-again dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
-    			Number of Favorites
-    			<span class="caret"></span>
-  			</button>
-			  <ul class="dropdown-menu" id="favorite-dropdown" role="menu" aria-labelledby="dropdownMenu1">
-          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">1</a></li>
-          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">2</a></li>
-          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">3</a></li>
-          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">4</a></li>
-			  </ul>
+			<div class="row">
+				<h4 class="text-center" id="favorite-number">Do you want to include any favorites? <%= image_tag("arrowdown.png", height: "20") %>
+</h4>
+ 				 <div class="col-sm-2 col-sm-offset-5 hidden" id="favorite-number-selection">
+	 				 <select name="post[meals]" class="form-control text-center">
+	 				 		<option value="0">None</option>
+	 				 		<option value="1">1</option>
+	 				 		<option value="2">2</option>
+	 				 		<option value="3">3</option>
+	 				 		<option value="4">4</option>
+	 				 		<option value="5">5</option>
+	 				 		<option value="6">6</option>
+	 				 </select>
+ 				 </div>
 			</div>
-		</div>
+			<div class="row text-center"
+				<p><%= link_to "Get Your Meal Plan", root_path, class: "btn btn-hate-it", id: "get-plan-btn" %></p>
+			</div>
 
-		<div class="account-tabs text-center">
-			<h3>Get Your Meal Plan</h3>
-			<p class="btn btn-try-again">Submit</p>
-		</div>
+			</div>
+
 	</div>
 </div>

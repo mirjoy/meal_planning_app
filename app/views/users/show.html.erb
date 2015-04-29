@@ -3,7 +3,15 @@
 	 <h1 class="text-center" id="account-header"><%= current_user.user_name %>'s Account</h1>
 	</div>
 
-	<div id="address">
-		<h4>My Account Type: <em>Free</em></h4>
+	<div class="col-sm-4 col-sm-offset-4 text-center">
+		<p><span class="user-profile-label">User Name:</span> 
+			<span class="user-profile-field"><%= current_user.user_name %></span></p>
+		<p><span class="user-profile-label">Email:</span> 
+			<span class="user-profile-field"><%= current_user.email %></span></p>
+			<% if current_user.phone_number %>
+				<p><span class="user-profile-label">Phone Number:</span>  
+					<span class="user-profile-field"><%= current_user.phone_number %></span></p>
+			<% end %>
+		<%= link_to "Edit My Profile", edit_path(current_user), class: "btn btn-dark" %>
 	</div>
 </div>

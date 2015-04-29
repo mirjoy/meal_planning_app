@@ -13,6 +13,8 @@ gem "faker"
 gem "bcrypt", "~> 3.1.7"
 gem "omniauth-facebook"
 gem "figaro"
+gem "responders"
+gem "faraday"
 
 # Use Unicorn as the app server
 # gem "unicorn"
@@ -39,5 +41,6 @@ group :development, :test do
   gem "awesome_print"
   gem "factory_girl_rails"
   gem "database_cleaner"
+  gem "capybara-email"
 end
 

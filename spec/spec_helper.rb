@@ -2,10 +2,14 @@ require "simplecov"
 require "codeclimate-test-reporter"
 require "capybara-webkit"
 require "factory_girl_rails"
+require 'omniauth'
+require "./spec/support/omniauth_macros"
+require "capybara/email/rspec"
 
 SimpleCov.start "rails"
 CodeClimate::TestReporter.start
 Capybara.javascript_driver = :webkit
+OmniAuth.config.test_mode = true
 
 RSpec.configure do |config|
 
@@ -30,4 +34,8 @@ RSpec.configure do |config|
 
   config.include FactoryGirl::Syntax::Methods
   config.backtrace_exclusion_patterns << /gems\//
+
+  config.include(OmniauthMacros)
 end
+
+

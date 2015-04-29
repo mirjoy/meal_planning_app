@@ -38,4 +38,23 @@
   position: relative;
 }
 
+#get-plan-btn {
+  margin-top: 20px;
+}
 
+#banned-food-list {
+  margin-top: 10px; 
+}
+
+#hated-food-input {
+  width: 150px;
+}
+
+.hated-food {
+  padding: 20px;
+}
+
+#hated-foods-list {
+  margin: 0 auto;
+  padding-bottom: 20px;
+}

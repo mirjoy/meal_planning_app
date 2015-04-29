@@ -15,10 +15,36 @@
 	background-color: #d3d3d3;
 }
 
-.hated-food {
-	padding: 20px;
+
+.user-form-label {
+	width: 160px;
+	text-align: right;
+	padding-right: 2px;
 }
 
-#hated-foods-list {
-	padding-bottom: 20px;
+.user-signin-form-label {
+	width: 70px;
+	text-align: right;
+	padding-right: 2px;
+}
+
+#register-link {
+	font-weight: bold;
+	padding-top: 30px;
+}
+
+#forgot-pw {
+	font-weight: bold;
+	padding-top: 30px;
+	font-style: italic;
+}
+
+.user-profile-label {
+	width: 200px;
+	text-align: right;
+}
+
+.user-profile-field {
+	width: 150px;
+	text-align: left;
 }

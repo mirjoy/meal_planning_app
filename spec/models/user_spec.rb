@@ -1,5 +1,4 @@
 require "rails_helper"
-require "support/factory_girl"
 
 RSpec.describe User, type: :model do
 	it "must have a name" do

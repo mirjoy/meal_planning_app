@@ -7,7 +7,6 @@ body {
 
 h1 {
   font-family: 'Lobster', cursive !important;
-
 }
 
 .hidden {
@@ -56,5 +55,20 @@ h1 {
 .btn-hate-it {
   background-color: #004e4e;
   color: #ffffff;
+}
+
+.no-link-color a{
+  color: #703A3A !important ;
+}
+
+.btn-dark {
+  background-color: #D2A176 !important;
+  color: #703A3A !important ;
+  width: 150px;
+}
+
+.btn-dark:hover {
+  background-color: #703A3A !important;
+  color: #ffffff !important ;
 }
 
