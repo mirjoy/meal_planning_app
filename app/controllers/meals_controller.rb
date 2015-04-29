@@ -1,4 +1,8 @@
 class MealsController < ApplicationController
+	def self.service
+		@service ||= MealService.new
+	end
+
 	def show
 	end
 
@@ -7,5 +11,9 @@ class MealsController < ApplicationController
 		@allergies = Allergy.all
 		@diets = Diet.all
     @cuisines = Cuisine.all
+	end
+
+	def create
+		
 	end
 end
