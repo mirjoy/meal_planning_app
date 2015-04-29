@@ -15,6 +15,7 @@ gem "omniauth-facebook"
 gem "figaro"
 gem "responders"
 gem "faraday"
+gem "selenium-webdriver"
 
 # Use Unicorn as the app server
 # gem "unicorn"

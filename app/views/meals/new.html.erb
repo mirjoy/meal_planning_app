@@ -6,7 +6,7 @@
 		  	<h3>Foods I Avoid</h3>
 		  </div>
 
-			<div class="container text-center">
+			<div class="text-center">
 			  <div id="hated-foods-list">
 					<button type="button" class="btn btn-try-again" id="specific-food-header">Specific Foods</button>
 					<button type="button" class="btn btn-try-again" id="allergy-header">Add An Allergy</button>
@@ -23,6 +23,7 @@
 							<% end %>					
 				 		</div>
 				 </div>
+
 					<div class="col-xs-12 hated-food hidden" id="allergy">
 						<% @allergies.each do |allergy| %>
 							<button type="button" class="btn btn-hate-it" data-id="<%= allergy.id %>">

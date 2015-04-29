@@ -38,8 +38,9 @@ RSpec.describe "can type in a food and have it dynamically added to the banned l
 		user = create(:user)
 		allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 		visit new_meal_path
+		click_link_or_button("Specific Foods")
 		fill_in "banned_food[name]", with: "Brussel sprouts"
-		find("#click-me").native.send_keys(:return)
+		find("#click-me").native.send_keys(:enter)
 		save_and_open_page
 		expect(page).to have_content("brussel sprouts")
 	end
