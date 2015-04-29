@@ -1,8 +1,5 @@
 class MealsController < ApplicationController
-	def self.service
-		@service ||= MealService.new
-	end
-
+	
 	def show
 	end
 
