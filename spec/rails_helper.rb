@@ -5,6 +5,7 @@ require "rspec/rails"
 require "capybara/rspec"
 
 ActiveRecord::Migration.maintain_test_schema!
+Capybara.javascript_driver = :webkit
 
 RSpec.configure do |config|
   config.fixture_path = "#{::Rails.root}/spec/fixtures"

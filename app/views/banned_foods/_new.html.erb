@@ -1,4 +1,4 @@
 <%= form_for(:banned_food, url: banned_foods_path, method: :post, remote: true) do |f| %>
 	<%= f.label :name, "Food to Exclude (ex: banana)" %><br>
-	<%= f.text_field :name, placeholder: "Fill in your food and hit enter" %>
+	<%= f.text_field :name, placeholder: "Fill in your food and hit enter", id: "click-me" %>
 <% end %>

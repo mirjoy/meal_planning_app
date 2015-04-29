@@ -3,7 +3,6 @@ require "rails_helper"
 RSpec.describe "User edits profile", type: :feature do
 	it "can edit their profile" do
 		user_logs_in
-		save_and_open_page
 		click_link_or_button("Edit My Profile")
 		fill_in "user[user_name]", with: "muppet"
 		fill_in "user[email]", with: "muppet@example.com"
