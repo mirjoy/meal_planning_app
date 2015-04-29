@@ -20,10 +20,10 @@ RSpec.describe "a user can choose what foods to ban", type: :feature do
 		expect(page).to have_content("Vegan")
 	end
 
-	xit "can exclude certain cuisines" do
+	it "can exclude certain cuisines" do
+		create(:cuisine)
 		user_visits_new_meal_path
-		expect(page).to have_content("Southwestern")
-	# American, Italian, Asian, Mexican, Southern & Soul Food, French, Southwestern, Barbecue, Indian, Chinese, Cajun & Creole, English, Mediterranean, Greek, Spanish, German, Thai, Moroccan, Irish, Japanese, Cuban, Hawaiin, Swedish, Hungarian, Portugese
+		expect(page).to have_content("Chinese")
 	end
 
 	def user_visits_new_meal_path

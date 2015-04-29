@@ -4,14 +4,16 @@ class Seeds
 		generate_specific_users
 		generate_allergies
 		generate_diets
+		generate_cuisines
 	end
 
 	def generate_users
 		20.times do
       user = User.create(
         user_name: Faker::Name.first_name,
-        provider: "Facebook",
         email: Faker::Internet.email,
+        password: "password",
+        password_confirmation: "password"
       )
     end
     p 'Users Created'
@@ -29,11 +31,19 @@ class Seeds
 		end
 	end
 
+	def generate_cuisines
+		%w(American, Italian, Asian, Mexican, Southern & Soul Food, French, Southwestern, Barbecue, Indian, Chinese, Cajun & Creole, English, Mediterranean, Greek, Spanish, German, Thai, 
+				Moroccan, Irish, Japanese, Cuban, Hawaiin, Swedish, Hungarian, Portugese).each do |cuisine|
+			Cuisine.create(name: cuisine)
+		end
+	end
+
 	def generate_specific_users
 		User.create(
 			user_name: "miriam",
-			provider: "Facebook",
 			email: "miriam@example.com",
+			password: "password",
+			password_confirmation: "password"
 			)
 	end
 
