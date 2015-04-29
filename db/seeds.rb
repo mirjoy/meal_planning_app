@@ -32,8 +32,8 @@ class Seeds
 	end
 
 	def generate_cuisines
-		%w(American, Italian, Asian, Mexican, Southern & Soul Food, French, Southwestern, Barbecue, Indian, Chinese, Cajun & Creole, English, Mediterranean, Greek, Spanish, German, Thai, 
-				Moroccan, Irish, Japanese, Cuban, Hawaiin, Swedish, Hungarian, Portugese).each do |cuisine|
+		["American", "Italian", "Asian", "Mexican", "Southern & Soul Food", "French", "Southwestern", "Barbecue", "Indian", "Chinese", "Cajun & Creole", "English", "Mediterranean", "Greek", "Spanish", "German", "Thai", 
+				"Moroccan", "Irish", "Japanese", "Cuban", "Hawaiin", "Swedish", "Hungarian", "Portugese"].each do |cuisine|
 			Cuisine.create(name: cuisine)
 		end
 	end

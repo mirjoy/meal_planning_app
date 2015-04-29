@@ -23,6 +23,7 @@ RSpec.describe "a user can choose what foods to ban", type: :feature do
 	it "can exclude certain cuisines" do
 		create(:cuisine)
 		user_visits_new_meal_path
+		click_link_or_button("Ban A Cuisine")
 		expect(page).to have_content("Chinese")
 	end
 

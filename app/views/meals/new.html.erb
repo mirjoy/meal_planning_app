@@ -11,6 +11,7 @@
 					<button type="button" class="btn btn-try-again" id="specific-food-header">Specific Foods</button>
 					<button type="button" class="btn btn-try-again" id="allergy-header">Add An Allergy</button>
 					<button type="button" class="btn btn-try-again" id="diet-header">Add A Diet</button>
+					<button type="button" class="btn btn-try-again" id="cuisine-header">Ban A Cuisine</button>
 			  	
 					<div class="col-xs-12 hated-food hidden" id="specific-food">
 						<%= render "banned_foods/new" %>
@@ -35,6 +36,13 @@
 					 	<% @diets.each do |diet| %>
 							<button type="button" class="btn btn-hate-it" data-id="<%= diet.id %>">
 								<%= diet.name %></button>
+						<% end %>	 	
+					</div>
+
+					<div class="col-xs-12 hated-food hidden" id="cuisine">
+					 	<% @cuisines.each do |cuisine| %>
+							<button type="button" class="btn btn-hate-it" data-id="<%= cuisine.id %>">
+								<%= cuisine.name %></button>
 						<% end %>	 	
 					</div>
 				</div>

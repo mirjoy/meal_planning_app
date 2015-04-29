@@ -2,6 +2,7 @@ $(document).ready(function(){
   toggleFoodList("#specific-food-header", "#specific-food");
   toggleFoodList("#allergy-header", "#allergy");
   toggleFoodList("#diet-header", "#diet");
+  toggleFoodList("#cuisine-header", "#cuisine");
 
   function toggleFoodList(foodCategory, foodList){
     $(foodCategory).bind("click", function(){

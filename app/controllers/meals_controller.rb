@@ -6,5 +6,6 @@ class MealsController < ApplicationController
 		@banned_foods = current_user.banned_foods
 		@allergies = Allergy.all
 		@diets = Diet.all
+		@cuisines = Cuisine.all
 	end
 end

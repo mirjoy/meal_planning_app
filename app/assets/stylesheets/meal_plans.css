@@ -58,3 +58,7 @@
   margin: 0 auto;
   padding-bottom: 20px;
 }
+
+#hated-foods-list button {
+  margin-bottom: 3px;
+}
