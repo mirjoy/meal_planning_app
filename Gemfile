@@ -15,6 +15,7 @@ gem "omniauth-facebook"
 gem "figaro"
 gem "responders"
 gem "faraday"
+gem "selenium-webdriver"
 
 # Use Unicorn as the app server
 # gem "unicorn"
@@ -42,5 +43,6 @@ group :development, :test do
   gem "factory_girl_rails"
   gem "database_cleaner"
   gem "capybara-email"
+  gem "codeclimate-test-reporter", require: nil
 end
 

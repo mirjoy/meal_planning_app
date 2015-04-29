@@ -5,6 +5,7 @@ require "rspec/rails"
 require "capybara/rspec"
 
 ActiveRecord::Migration.maintain_test_schema!
+Capybara.javascript_driver = :webkit
 
 RSpec.configure do |config|
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
@@ -17,4 +18,8 @@ class ActiveRecord::Base
   def self.connection
     @@shared_connection || retrieve_connection
   end
+end
+
+def user_logs_in
+	
 end

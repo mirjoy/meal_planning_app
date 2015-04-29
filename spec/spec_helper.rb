@@ -8,6 +8,7 @@ require "capybara/email/rspec"
 
 SimpleCov.start "rails"
 CodeClimate::TestReporter.start
+
 Capybara.javascript_driver = :webkit
 OmniAuth.config.test_mode = true
 

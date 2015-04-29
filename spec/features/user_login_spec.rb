@@ -1,8 +1,13 @@
 require "rails_helper"
+require 'helpers'
+
+RSpec.configure do |c|
+  c.include Helpers
+end
 
 RSpec.describe "user tries to login", type: :feature do
   it "can sign in with Facebook account and receive a welcome email" do
-    login_with_facebook
+    user_logs_in_with_facebook
 
     expect(page).to have_content("Miriam Joy")
     expect(page).to have_content("Log Out")
@@ -14,9 +19,9 @@ RSpec.describe "user tries to login", type: :feature do
   end
 
   it "can tell if user already exists and won't sent them a welcome email" do
-    login_with_facebook
+    user_logs_in_with_facebook
     click_link_or_button("Log Out")
-    login_with_facebook
+    user_logs_in_with_facebook
 
     expect(ActionMailer::Base.deliveries.length).to eq(0)
   end 
@@ -66,14 +71,4 @@ RSpec.describe "user tries to login", type: :feature do
 
     expect(page).to have_content("Wrong user name or password")
   end
-
-  def login_with_facebook
-    visit root_path
-    mock_auth_hash
-    within(".nav") do
-      click_link "Log In"
-    end
-    find("#facebook-login").click
-  end
-
 end
