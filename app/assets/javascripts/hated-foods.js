@@ -21,24 +21,25 @@ $(document).ready(function(){
   });
 
   $("#favorite-number").bind("click", function(){
-    $("#favorite-number-selection").toggleClass("hidden")
+    $("#favorite-number-selection").toggleClass("hidden");
   });
 
   $("#specific-food").on("ajax:success", function(e, data, status, xhr) {
-      var button = $("<button type='button' class='btn btn-danger one-banned-food' style='margin: 2px' data-id=" + data.id + ">"+data.name+"</button>");
+      var button = $("<button type='button' class='btn btn-danger one-banned-food' 
+                      style='margin: 2px' data-id=" + data.id + ">"+data.name+"</button>");
       $("#banned-food-list").append(button);
-      return $("input").val("")
+      return $("input").val("");
     }).on("ajax:error", function(e, xhr, status, error) {
     
     return $("#banned-food-list").append("<p>You have already banned that food.</p>");
   });
 
    $(".one-banned-food").on("click", function(e){
-      var food_id = $(this).attr("data-id");
+      var foodId = $(this).attr("data-id");
       
       $.ajax({
           method: "DELETE",
-          url: "/banned_foods/" + food_id
+          url: "/banned_foods/" + foodId
         })
 
       return $(this).remove();
@@ -46,13 +47,12 @@ $(document).ready(function(){
 
    $("#allergy button").on("click", function(){
       // var allergy_id = $(this).attr("data-id");
-      var allergy_name = $(this).text();
+      var allergyName = $(this).text();
       
       $.ajax ({
         method: "POST",
         url: "/allergies"
 
-      })
-
+      });
    });
 });
