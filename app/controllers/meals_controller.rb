@@ -1,5 +1,4 @@
 class MealsController < ApplicationController
-	
 	def show
 	end
 
@@ -11,9 +10,11 @@ class MealsController < ApplicationController
 	end
 
 	def create
- 		@fave_num = params[:meal][:fave_num]
- 		@meal_num = params[:meal][:meal_num]
- binding.pry
+ 		@fave_num = params[:meal][:fave_num].to_i
+ 		@meal_num = params[:meal][:meal_num].to_i
+
+ 		@meals = Meal.make_meals(@meal_num)
+
  		redirect_to meal_plan_path
 	end
 end

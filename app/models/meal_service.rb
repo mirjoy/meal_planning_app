@@ -3,7 +3,7 @@ class MealService
 
 	def initialize
 		@meal_requirements = ""
-		@connection = Faraday.new(url: "http://api.yummly.com/v1/api/recipes?_app_id=ENV["yummly_id"]&_app_key=ENV["yummly_key"]&q=dinner&requirePictures=true&allowedCourse[]=course^course-Main-Dishes")
+		@connection = Faraday.new(url: "http://api.yummly.com/v1/api/recipes?_app_id=ENV['yummly_id']&_app_key=ENV['yummly_key']&q=dinner&requirePictures=true&allowedCourse[]=course^course-Main-Dishes")
 	end
 
 	def meals
@@ -21,13 +21,13 @@ class MealService
 
 	def set_diets
 		current_user.diets.each do |diet| 
-			@meal_requirements += #"&excludedIngredient[]=#{banned_food}"
+			@meal_requirements += "&excludedIngredient[]=#{banned_food}"
 		end
 	end
 
 	def set_allergies
 		current_user.allergies.each do |allergy| 
-			@meal_requirements += #"&excludedIngredient[]=#{banned_food}"
+			@meal_requirements += "&excludedIngredient[]=#{banned_food}"
 		end
 	end
 end
