@@ -12,6 +12,7 @@ class MealsController < ApplicationController
 	end
 
 	def create
+		destroy_all_user_meals
  		@fave_num = params[:meal][:fave_num].to_i
  		@meal_num = params[:meal][:meal_num].to_i
 
@@ -21,6 +22,10 @@ class MealsController < ApplicationController
 	end
 
 	private
+	
+	def destroy_all_user_meals
+		Meal.where(user_id: current_user.id).destroy_all
+	end
 
 	def readable_ingredients(meals)
 		(meals.map do |meal| 
