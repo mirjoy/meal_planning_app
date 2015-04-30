@@ -6,6 +6,8 @@ class Meal < ActiveRecord::Base
 		@service ||= MealService.new
 	end
 
+
+
 	def structify_meals
 		service.meals["matches"].map do |match|
 			OpenStruct.new(match)

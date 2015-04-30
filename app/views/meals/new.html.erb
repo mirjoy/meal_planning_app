@@ -52,19 +52,30 @@
 				<h4 class="text-center" id="favorite-number">Do you want to include any favorites? <%= image_tag("arrowdown.png", height: "20") %>
 </h4>
  				 <div class="col-sm-2 col-sm-offset-5 hidden" id="favorite-number-selection">
-	 				 <select name="post[meals]" class="form-control text-center">
+	 				 <select name="post[fave-num]" class="form-control text-center">
 	 				 		<option value="0">None</option>
-	 				 		<option value="1">1</option>
-	 				 		<option value="2">2</option>
-	 				 		<option value="3">3</option>
-	 				 		<option value="4">4</option>
-	 				 		<option value="5">5</option>
-	 				 		<option value="6">6</option>
+	 				 		<% (1..10).to_a.each do |num| %>
+	 				 			<option value="#{<%= num %>}"><%= num %></option>
+	 				 		<% end %>
 	 				 </select>
  				 </div>
 			</div>
+
+			<div class="row">
+				<h4 class="text-center" id="meal-number">How many meals would you like? <%= image_tag("arrowdown.png", height: "20") %>
+				</h4>
+ 				 <div class="col-sm-2 col-sm-offset-5 hidden" id="meal-number-selection">
+	 				 <select name="post[meal-num]" class="form-control text-center">
+	 				 		<option value="0">None</option>
+	 				 		<% (1..10).to_a.each do |num| %>
+	 				 			<option value="#{<%= num %>}"><%= num %></option>
+	 				 		<% end %>
+	 				 </select>
+ 				 </div>
+			</div>
+
 			<div class="row text-center"
-				<p><%= link_to "Get Your Meal Plan", root_path, class: "btn btn-hate-it", id: "get-plan-btn" %></p>
+				<p><%= link_to "Get Your Meal Plan", meals_path, method: :post, class: "btn btn-hate-it", id: "get-plan-btn" %></p>
 			</div>
 
 			</div>
