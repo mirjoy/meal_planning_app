@@ -25,6 +25,10 @@ $(document).ready(function(){
     $("#favorite-number-selection").toggleClass("hidden");
   });
 
+  $("#meal-number").bind("click", function(){
+    $("#meal-number-selection").toggleClass("hidden");
+  });
+
   $("#specific-food").on("ajax:success", function(e, data, status, xhr) {
       var button = $("<button type='button' class='btn btn-danger one-banned-food' style='margin: 2px' data-id=" + data.id + ">"+data.name+"</button>");
       $("#banned-food-list").append(button);
