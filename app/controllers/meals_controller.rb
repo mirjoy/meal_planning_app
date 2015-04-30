@@ -11,6 +11,9 @@ class MealsController < ApplicationController
 	end
 
 	def create
-		binding.pry
+ 		@fave_num = params[:meal][:fave_num]
+ 		@meal_num = params[:meal][:meal_num]
+ binding.pry
+ 		redirect_to meal_plan_path
 	end
 end
