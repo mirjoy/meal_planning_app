@@ -40,7 +40,6 @@ $(document).ready(function(){
   });
 
    function attachDeleteFoodClickHandler() {
-     // $(".one-banned-food").off("click", "**");
      $(".one-banned-food").on("click", function(e){
       var foodId = $(this).attr("data-id");
       
@@ -54,13 +53,12 @@ $(document).ready(function(){
     }
 
    $("#allergy button").on("click", function(){
-      // var allergy_id = $(this).attr("data-id");
       var allergyName = $(this).text();
       
       $.ajax ({
         method: "POST",
         url: "/allergies"
-
+        // data: allergyName
       });
    });
 

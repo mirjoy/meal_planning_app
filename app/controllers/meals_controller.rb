@@ -13,7 +13,7 @@ class MealsController < ApplicationController
  		@fave_num = params[:meal][:fave_num].to_i
  		@meal_num = params[:meal][:meal_num].to_i
 
- 		@meals = Meal.make_meals(@meal_num)
+ 		@meals = Meal.make_meals(@meal_num, current_user)
 
  		redirect_to meal_plan_path
 	end

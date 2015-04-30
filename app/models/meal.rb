@@ -2,8 +2,10 @@ class Meal < ActiveRecord::Base
 	belongs_to :user
 	has_many :ingredients
 
+	attr_reader :current_user
+
 	def self.service
-		@service ||= MealService.new
+		@service ||= MealService.new(@current_user)
 	end
 
 	def self.structify_meals
@@ -16,8 +18,8 @@ class Meal < ActiveRecord::Base
 		structify_meals.sample(num)
 	end
 
-	def self.make_meals(num)
-		 		binding.pry
+	def self.make_meals(num, current_user)
+		@current_user = current_user
 
 		meals_wanted(num).map do |meal|
 			new_meal = Meal.create(
