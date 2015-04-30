@@ -19,19 +19,15 @@ class MealService
 	end
 
 	def ban_foods
-		current_user.banned_foods.map {|food| food.name.gsub(" ", "%20") }
+		current_user.banned_foods.map { |food| food.name.gsub(" ", "%20") }
 	end
 
 	def set_diets
-		current_user.diets.each do |diet| 
-			@meal_requirements += "&excludedIngredient[]=#{banned_food.name}"
-		end
+		current_user.diets { |diet| diet.name }
 	end
 
 	def set_allergies
-		current_user.allergies.each do |allergy| 
-			@meal_requirements += "&excludedIngredient[]=#{banned_food.name}"
-		end
+		current_user.allergies { |allergy| allergy.name }
 	end
 end
 

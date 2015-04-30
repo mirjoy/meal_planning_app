@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
 
   def sign_in
     session[:user_id] = @user.id
-    redirect_to account_path, notice: "Sign in successful"
+    redirect_to new_meal_path, notice: "Sign in successful"
   end
   helper_method :sign_in
 end
