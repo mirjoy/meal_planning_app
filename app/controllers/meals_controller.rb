@@ -1,5 +1,11 @@
 class MealsController < ApplicationController
 	def show
+		@meals = current_user.meals
+		@ingredients = (@meals.map do |meal| 
+					meal.ingredients.map do |ingredient|
+						ingredient.name
+					end
+				end)
 	end
 
 	def new
