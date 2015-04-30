@@ -1,11 +1,7 @@
 class MealsController < ApplicationController
 	def show
 		@meals = current_user.meals
-		@ingredients = (@meals.map do |meal| 
-					meal.ingredients.map do |ingredient|
-						ingredient.name
-					end
-				end)
+		@ingredients = readable_ingredients(@meals)
 	end
 
 	def new
@@ -22,5 +18,15 @@ class MealsController < ApplicationController
  		@meals = Meal.make_meals(@meal_num, current_user)
 
  		redirect_to meal_plan_path
+	end
+
+	private
+
+	def readable_ingredients(meals)
+		(meals.map do |meal| 
+					meal.ingredients.map do |ingredient|
+						ingredient.name
+					end
+				end).flatten.uniq.sort
 	end
 end

@@ -3,32 +3,36 @@
 		<h1 class="text-center one-meal">This Week's Meal Plan</h1>
 	</div>
 
-	<div class="row one-meal">
-		<%= @meals.each do |meal| %>
-		<div class="col-sm-4 text-center">
-			<div class="image-background">
-				<%= image_tag(meal.image_url, height: "200") %>
+	<% @meals.each do |meal| %>
+		<div class="row one-meal">
+			<div class="col-sm-4 text-center">
+				<div class="image-background">
+					<%= image_tag(meal.image_url, height: "200") %>
+				</div>
+			</div>
+			<div class="col-sm-6 text-left">
+				<h2><%= meal.name %></h2>
+				<h4>Ingredients:</h4>
+					<ul>
+						<% meal.ingredients.each do |ingredient| %>
+							<li><%= ingredient.name %></li>
+						<% end %>
+					</ul>
+					<p><%= link_to "Full Instructions", "http://www.yummly.com/recipe/#{meal.yummly_id}", class: "btn btn-dark" %></p>
+				<div class="btn-group">
+					<button type="button" class="btn btn-try-again">Find Another Recipe</button>	
+					<button type="button" class="btn btn-hate-it">Ban This Recipe</button>
+				</div>
 			</div>
 		</div>
-		<div class="col-sm-8 text-left">
-			<h2><%= meal.name %></h2>
-			<h4>Ingredients:</h4>
-				<% meal.ingredients.each do |ingredient| %>
-					<p><%= ingredient.name %></p>
-				<% end %>
-			<div class="btn-group">
-				<button type="button" class="btn btn-try-again">Find Another Recipe</button>	
-				<button type="button" class="btn btn-hate-it">Never Show Me This Recipe</button>
-			</div>
-		</div>
-		<% end %>
-	</div>
+	<% end %>
 
 	<div class="text-center" id="grocery-list">
 		<h2>Grocery List</h2>
-			
-
-			<button type="button" class="btn btn-default">Export to Wunderlist</button>	
+		<% @ingredients.each do |ing| %>
+			<p><%= ing %></p>
+		<% end %>
+			<button type="button" class="btn btn-dark">Export to Wunderlist</button>	
 	</div>
 
 
