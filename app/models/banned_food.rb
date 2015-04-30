@@ -7,17 +7,11 @@ class BannedFood < ActiveRecord::Base
 	before_validation :downcase_name
 	before_validation :singularize_name
 
-	before_save :fill_blank_spaces
-
 	def downcase_name
 		self.name = self.name.downcase if self.name
 	end
 
 	def singularize_name
 		self.name = self.name.singularize if self.name
-	end
-
-	def fill_blank_spaces
-		self.name = self.name.gsub(" ", "%20")
 	end
 end
