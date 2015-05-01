@@ -18,9 +18,9 @@ class SessionsController < ApplicationController
   protected
 
   def sign_in_with_facebook
-    new_user?
+    user_is_new = new_user?
     @user = User.find_or_create_from_auth(auth_hash)
-    UserMailer.account_confirmation(@user).deliver_now if new_user?
+    UserMailer.account_confirmation(@user).deliver_now if user_is_new
     sign_in
   end
 

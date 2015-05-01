@@ -12,15 +12,9 @@
     </div>
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
-
-      <ul class="nav navbar-nav">
-      <% if current_user %>
-          <%= render "layouts/user_navbar" %>
-      <% else %>
-          <li><%= link_to "Log In", login_path %></li>
-      <% end %>
-
-      </ul>
+      <div class="nav navbar-nav">
+        <%= render current_user.nav %>
+      </div>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
