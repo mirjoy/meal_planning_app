@@ -1,5 +1,6 @@
 class BannedFoodsController < ApplicationController
 	def create
+		binding.pry
 		@new_food = BannedFood.find_or_create_by(food_params)
 		if @new_food.save
 			current_user.banned_foods << @new_food

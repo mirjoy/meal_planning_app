@@ -26,9 +26,11 @@
 				 </div>
 
 					<div class="col-xs-12 hated-food hidden" id="allergy">
-						<% @allergies.each do |allergy| %>
-							<button type="button" class="btn btn-hate-it" data-id="<%= allergy.id %>">
-								<%= allergy.name %></button>
+						<%= form_for(:allergy, url: allergies_path, method: :post, remote: true, id: "allergy-form") do |f| %>
+							<% @allergies.each do |allergy| %>
+								<button type="button" class="btn btn-hate-it" data-id="<%= allergy.id %>">
+									<%= f.label allergy.name %></button>
+							<% end %>
 						<% end %>
 					</div>
 
@@ -49,12 +51,6 @@
 			</div>
 
 				<%= form_for(:meal, url: meals_path, method: :post) do |f| %>
-					<div class="row">
-						<h4 class="text-center" id="favorite-number">Do you want to include any favorites? <%= image_tag("arrowdown.png", height: "20") %></h4>
-		 				 <div class="col-sm-2 col-sm-offset-5 hidden text-center" id="favorite-number-selection">
-		 				 	<%= f.select :fave_num, options_for_select(0..10), class: "form-control text-center" %>
-		 				 </div>
-					</div>
 					<div class="row">
 						<h4 class="text-center" id="meal-number">How many meals would you like? <%= image_tag("arrowdown.png", height: "20") %>
 						</h4>

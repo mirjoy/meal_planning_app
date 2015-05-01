@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   def create
   	@user = User.new(user_params)
     if @user.save
-      UserMailer.account_confirmation(@user).deliver_now
+      UserMailer.account_confirmation(@user).deliver
       sign_in
     elsif User.find_by(email: params[:user][:email])
       redirect_to :back

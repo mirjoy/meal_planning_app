@@ -21,10 +21,6 @@ $(document).ready(function(){
     $(this).toggleClass("btn-danger");
   });
 
-  $("#favorite-number").bind("click", function(){
-    $("#favorite-number-selection").toggleClass("hidden");
-  });
-
   $("#meal-number").bind("click", function(){
     $("#meal-number-selection").toggleClass("hidden");
   });
@@ -52,13 +48,14 @@ $(document).ready(function(){
      });
     }
 
-   $("#allergy button").on("click", function(){
-      var allergyName = $(this).text();
-      
+
+  $("#allergy button").on("click", function(){
+    // $(form#allergy-form).trigger('submit.rails');
+    var allergyName = $(this).text();
+
       $.ajax ({
         method: "POST",
         url: "/allergies"
-        // data: allergyName
       });
    });
 

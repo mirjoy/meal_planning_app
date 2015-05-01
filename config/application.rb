@@ -5,21 +5,11 @@ Bundler.require(*Rails.groups)
 
 module Delistcious
   class Application < Rails::Application
-    config.active_record.raise_in_transactional_callbacks = true
-    config.active_job.queue_adapter = :sidekiq
+    # config.active_record.raise_in_transactional_callbacks = true
 
-    config.action_mailer.perform_deliveries = true
-    config.action_mailer.delivery_method = :smtp
-    config.action_mailer.default_url_options = { host: 'localhost:3000' }
+    # config.action_mailer.perform_deliveries = true
+    # config.action_mailer.delivery_method = :smtp
+    # config.action_mailer.default_url_options = { host: 'localhost:3000' }
 
-    config.action_mailer.smtp_settings  = {
-		  user_name: 						ENV["sendgrid_name"],
-		  password: 						ENV["sendgrid_pw"],
-		  domain: 							"localhost:3000",
-		  address: 							"smtp.sendgrid.net",
-		  port:  								587,
-		  authentication:   		:plain,
-		  enable_starttls_auto: true
-		}
   end
 end
