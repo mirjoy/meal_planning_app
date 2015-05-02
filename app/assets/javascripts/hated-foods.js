@@ -19,10 +19,13 @@ $(document).ready(function(){
 
   $(".hated-food").find("button").on("click", function(){
     $(this).toggleClass("btn-danger");
-  });
-
-  $("#favorite-number").bind("click", function(){
-    $("#favorite-number-selection").toggleClass("hidden");
+    var allergyName = $(this).text().trim();
+    if($(this).hasClass("btn-danger")){
+      linkAllergyToCurrentUser(allergyName);
+    }
+    else{
+      unlinkAllergyFromCurrentUser($(this).attr("data-id"));
+    }
   });
 
   $("#meal-number").bind("click", function(){
@@ -40,7 +43,6 @@ $(document).ready(function(){
   });
 
    function attachDeleteFoodClickHandler() {
-     // $(".one-banned-food").off("click", "**");
      $(".one-banned-food").on("click", function(e){
       var foodId = $(this).attr("data-id");
       
@@ -53,16 +55,23 @@ $(document).ready(function(){
      });
     }
 
-   $("#allergy button").on("click", function(){
-      // var allergy_id = $(this).attr("data-id");
-      var allergyName = $(this).text();
-      
+
+   function linkAllergyToCurrentUser(allergyName){
       $.ajax ({
         method: "POST",
-        url: "/allergies"
-
+        url: "/allergies",
+        data: { allergy: { name: allergyName } }
       });
-   });
+    }
 
+
+    function unlinkAllergyFromCurrentUser(allergyId){
+      $.ajax ({
+        method: "DELETE",
+        url: "/allergies/" + allergyId
+      });
+    }
+    
+    
    attachDeleteFoodClickHandler();
 });

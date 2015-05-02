@@ -50,12 +50,6 @@
 
 				<%= form_for(:meal, url: meals_path, method: :post) do |f| %>
 					<div class="row">
-						<h4 class="text-center" id="favorite-number">Do you want to include any favorites? <%= image_tag("arrowdown.png", height: "20") %></h4>
-		 				 <div class="col-sm-2 col-sm-offset-5 hidden text-center" id="favorite-number-selection">
-		 				 	<%= f.select :fave_num, options_for_select(0..10), class: "form-control text-center" %>
-		 				 </div>
-					</div>
-					<div class="row">
 						<h4 class="text-center" id="meal-number">How many meals would you like? <%= image_tag("arrowdown.png", height: "20") %>
 						</h4>
 	 				  <div class="col-sm-2 col-sm-offset-5 hidden text-center" id="meal-number-selection">
@@ -66,7 +60,6 @@
 						 <p><%= f.submit "Get Your Meal Plan", class: "btn btn-hate-it", id: "get-plan-btn" %></p>
 					</div>
 				<% end %>
-
 		</div>
 	</div>
 </div>

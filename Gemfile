@@ -16,7 +16,7 @@ gem "figaro"
 gem "responders"
 gem "faraday"
 gem "selenium-webdriver"
-gem "sidekiq"
+gem "addressable"
 
 # Use Unicorn as the app server
 # gem "unicorn"

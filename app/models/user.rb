@@ -12,6 +12,8 @@ class User < ActiveRecord::Base
 
   has_many :user_cuisines
   has_many :cuisines, through: :user_cuisines
+
+  has_many :meals
   
   before_save { self.email = email.downcase }
   VALID_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
