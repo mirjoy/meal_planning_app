@@ -1,6 +1,6 @@
 class AllergiesController < ApplicationController
 	def create
-		@allergy = Allergy.find_by(name: params[:allergy][:name])
+    @allergy = Allergy.find_by(name: params[:allergy][:name])
 		UserAllergy.create(allergy_id: @allergy.id, user_id: current_user.id)
 		redirect_to :back
 	end

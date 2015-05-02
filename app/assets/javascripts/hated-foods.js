@@ -62,17 +62,15 @@ $(document).ready(function(){
         url: "/allergies",
         data: { allergy: { name: allergyName } }
       });
-      console.log('called link');
-    };
+    }
 
 
     function unlinkAllergyFromCurrentUser(allergyId){
       $.ajax ({
         method: "DELETE",
         url: "/allergies/" + allergyId
-      })
-      console.log('called unlink');
-    };
+      });
+    }
     
     
    attachDeleteFoodClickHandler();
