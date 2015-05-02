@@ -17,7 +17,7 @@ $(document).ready(function(){
     });
   };
 
-  $(".hated-food").find("button").on("click", function(){
+  $("#allergy").find("button").on("click", function(){
     $(this).toggleClass("btn-danger");
     var allergyName = $(this).text().trim();
     if($(this).hasClass("btn-danger")){
@@ -25,6 +25,17 @@ $(document).ready(function(){
     }
     else{
       unlinkAllergyFromCurrentUser($(this).attr("data-id"));
+    }
+  });
+
+  $("#diet").find("button").on("click", function(){
+    $(this).toggleClass("btn-danger");
+    var dietName = $(this).text().trim();
+    if($(this).hasClass("btn-danger")){
+      linkDietToCurrentUser(dietName);
+    }
+    else{
+      unlinkDietFromCurrentUser($(this).attr("data-id"));
     }
   });
 
@@ -55,7 +66,6 @@ $(document).ready(function(){
      });
     }
 
-
    function linkAllergyToCurrentUser(allergyName){
       $.ajax ({
         method: "POST",
@@ -64,11 +74,25 @@ $(document).ready(function(){
       });
     }
 
-
-    function unlinkAllergyFromCurrentUser(allergyId){
+   function unlinkAllergyFromCurrentUser(allergyId){
       $.ajax ({
         method: "DELETE",
         url: "/allergies/" + allergyId
+      });
+    }
+
+    function linkDietToCurrentUser(dietName){
+      $.ajax ({
+        method: "POST",
+        url: "/diets",
+        data: { diet: { name: dietName } }
+      });
+    }
+
+    function unlinkDietFromCurrentUser(dietId){
+      $.ajax ({
+        method: "DELETE",
+        url: "/diets/" + dietId
       });
     }
     
