@@ -29,9 +29,9 @@ class MealsController < ApplicationController
 
 	def readable_ingredients(meals)
 		(meals.map do |meal| 
-					meal.ingredients.map do |ingredient|
-						ingredient.name
-					end
-				end).flatten.uniq.sort
+			meal.ingredients.map do |ingredient|
+				ingredient.name
+			end
+		end).flatten.uniq.sort
 	end
 end
