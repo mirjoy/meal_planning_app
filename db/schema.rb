@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150430042106) do
+ActiveRecord::Schema.define(version: 20150502190200) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,6 +52,8 @@ ActiveRecord::Schema.define(version: 20150430042106) do
     t.integer "allergy_id"
   end
 
+  add_index "user_allergies", ["user_id", "allergy_id"], name: "index_user_allergies_on_user_id_and_allergy_id", unique: true, using: :btree
+
   create_table "user_banned_foods", force: :cascade do |t|
     t.integer "user_id"
     t.integer "banned_food_id"
@@ -64,10 +66,14 @@ ActiveRecord::Schema.define(version: 20150430042106) do
     t.integer "cuisine_id"
   end
 
+  add_index "user_cuisines", ["user_id", "cuisine_id"], name: "index_user_cuisines_on_user_id_and_cuisine_id", unique: true, using: :btree
+
   create_table "user_diets", force: :cascade do |t|
     t.integer "user_id"
     t.integer "diet_id"
   end
+
+  add_index "user_diets", ["user_id", "diet_id"], name: "index_user_diets_on_user_id_and_diet_id", unique: true, using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "user_name"
