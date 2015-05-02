@@ -23,5 +23,6 @@ Rails.application.routes.draw do
   resources :password_resets,  only: [:new, :create, :edit, :update]
   resources :banned_foods,     only: [:create, :destroy]
   resources :allergies,        only: [:create, :destroy]
-  resources :diets,             only: [:create, :destroy]
+  resources :diets,            only: [:create, :destroy]
+  resources :cuisines,         only: [:create, :destroy]
 end

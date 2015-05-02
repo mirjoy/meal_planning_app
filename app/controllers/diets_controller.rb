@@ -6,9 +6,6 @@ class DietsController < ApplicationController
 	end
 
 	def destroy
-		@diet_to_remove = BannedFood.find_by(id: params[:id])
-		UserBannedFood.find_by(user_id: 			 current_user.id, 
-													 banned_food_id: @diet_to_remove.id).destroy
-		render :new
+		UserDiet.find_by(diet_id: params[:id], user_id: current_user.id).destroy
 	end
 end

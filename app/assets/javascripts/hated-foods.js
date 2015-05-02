@@ -39,6 +39,17 @@ $(document).ready(function(){
     }
   });
 
+  $("#cuisine").find("button").on("click", function(){
+    $(this).toggleClass("btn-danger");
+    var cuisineName = $(this).text().trim();
+    if($(this).hasClass("btn-danger")){
+      linkCuisineToCurrentUser(cuisineName);
+    }
+    else{
+      unlinkCuisineFromCurrentUser($(this).attr("data-id"));
+    }
+  });
+
   $("#meal-number").bind("click", function(){
     $("#meal-number-selection").toggleClass("hidden");
   });
@@ -96,6 +107,20 @@ $(document).ready(function(){
       });
     }
     
+    function linkCuisineToCurrentUser(cuisineName){
+      $.ajax ({
+        method: "POST",
+        url: "/cuisines",
+        data: { cuisine: { name: cuisineName } }
+      });
+    }
+
+    function unlinkCuisineFromCurrentUser(cuisineId){
+      $.ajax ({
+        method: "DELETE",
+        url: "/cuisines/" + cuisineId
+      });
+    }
     
    attachDeleteFoodClickHandler();
 });
