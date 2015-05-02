@@ -9,7 +9,7 @@ class CurrentUser
 		user.nil? || "layouts/user_navbar"
 	end
 
-	# def self.meta_methods(*args)
+	# def meta_methods(*args)
 	# 	args.each do |action|
 	# 		define_method(action) do
 	# 			user.action

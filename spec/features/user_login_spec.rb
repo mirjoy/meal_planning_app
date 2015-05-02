@@ -45,8 +45,7 @@ RSpec.describe "user tries to login", type: :feature do
     fill_in "session[password]", with: user.password
     click_link_or_button("Submit")
 
-    expect(page).to have_content(user.user_name)
-    expect(page).to have_content("Favorites")
+    expect(page).to have_content("Sign in successful")
   end
 
   it "cannot sign in with an inaccurate password" do

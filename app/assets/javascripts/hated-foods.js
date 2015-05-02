@@ -19,6 +19,13 @@ $(document).ready(function(){
 
   $(".hated-food").find("button").on("click", function(){
     $(this).toggleClass("btn-danger");
+    var allergyName = $(this).text().trim();
+    if($(this).hasClass("btn-danger")){
+      linkAllergyToCurrentUser(allergyName);
+    }
+    else{
+      unlinkAllergyFromCurrentUser($(this).attr("data-id"));
+    }
   });
 
   $("#meal-number").bind("click", function(){
@@ -49,15 +56,24 @@ $(document).ready(function(){
     }
 
 
-  $("#allergy button").on("click", function(){
-    // $(form#allergy-form).trigger('submit.rails');
-    var allergyName = $(this).text();
-
+   function linkAllergyToCurrentUser(allergyName){
       $.ajax ({
         method: "POST",
-        url: "/allergies"
+        url: "/allergies",
+        data: { allergy: { name: allergyName } }
       });
-   });
+      console.log('called link');
+    };
 
+
+    function unlinkAllergyFromCurrentUser(allergyId){
+      $.ajax ({
+        method: "DELETE",
+        url: "/allergies/" + allergyId
+      })
+      console.log('called unlink');
+    };
+    
+    
    attachDeleteFoodClickHandler();
 });

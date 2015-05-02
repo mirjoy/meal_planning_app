@@ -26,11 +26,9 @@
 				 </div>
 
 					<div class="col-xs-12 hated-food hidden" id="allergy">
-						<%= form_for(:allergy, url: allergies_path, method: :post, remote: true, id: "allergy-form") do |f| %>
-							<% @allergies.each do |allergy| %>
-								<button type="button" class="btn btn-hate-it" data-id="<%= allergy.id %>">
-									<%= f.label allergy.name %></button>
-							<% end %>
+						<% @allergies.each do |allergy| %>
+							<button type="button" class="btn btn-hate-it" data-id="<%= allergy.id %>">
+								<%= allergy.name %></button>
 						<% end %>
 					</div>
 
