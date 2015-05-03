@@ -8,6 +8,7 @@ require "capybara/email/rspec"
 require "shoulda-matchers"
 
 SimpleCov.start "rails"
+# open coverage/index.html
 CodeClimate::TestReporter.start
 
 Capybara.javascript_driver = :webkit
