@@ -43,4 +43,8 @@ class CurrentUser
 	def phone_number
 		user.phone_number
 	end
+
+	def errors
+		user.errors
+	end
 end

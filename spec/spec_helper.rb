@@ -19,6 +19,8 @@ RSpec.configure do |config|
     DatabaseCleaner.clean_with(:truncation)
   end
 
+  config.before(:each) { ActionMailer::Base.deliveries.clear }      
+
   config.around(:each) do |example|
     DatabaseCleaner.cleaning do
       example.run

@@ -12,6 +12,6 @@
 				<p><span class="user-profile-label">Phone Number:</span>  
 					<span class="user-profile-field"><%= current_user.phone_number %></span></p>
 			<% end %>
-		<%= link_to "Edit My Profile", edit_path(current_user), class: "btn btn-dark" %>
+		<%= link_to "Edit My Profile", edit_user_path(current_user.id), class: "btn btn-dark" %>
 	</div>
 </div>
