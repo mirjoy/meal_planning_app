@@ -47,4 +47,8 @@ class CurrentUser
 	def errors
 		user.errors
 	end
+
+	def update(params)
+		user.update(params)
+	end
 end
