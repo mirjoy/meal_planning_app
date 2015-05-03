@@ -5,6 +5,7 @@ require "factory_girl_rails"
 require 'omniauth'
 require "./spec/support/omniauth_macros"
 require "capybara/email/rspec"
+require "shoulda-matchers"
 
 SimpleCov.start "rails"
 CodeClimate::TestReporter.start
@@ -41,4 +42,10 @@ RSpec.configure do |config|
   config.include(OmniauthMacros)
 end
 
+Shoulda::Matchers.configure do |config|
+  config.integrate do |with|
+    with.test_framework :rspec    
+    with.library :active_record
+  end
+end
 
