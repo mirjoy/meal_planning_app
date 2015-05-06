@@ -24,6 +24,7 @@ $(document).ready(function(){
       linkAllergyToCurrentUser(allergyName);
     }
     else{
+      $(this).addClass("btn-hate-it")
       unlinkAllergyFromCurrentUser($(this).attr("data-id"));
     }
   });
@@ -35,6 +36,7 @@ $(document).ready(function(){
       linkDietToCurrentUser(dietName);
     }
     else{
+      $(this).addClass("btn-hate-it")
       unlinkDietFromCurrentUser($(this).attr("data-id"));
     }
   });
@@ -46,6 +48,7 @@ $(document).ready(function(){
       linkCuisineToCurrentUser(cuisineName);
     }
     else{
+      $(this).addClass("btn-hate-it")
       unlinkCuisineFromCurrentUser($(this).attr("data-id"));
     }
   });
@@ -58,7 +61,7 @@ $(document).ready(function(){
       var button = $("<button type='button' class='btn btn-danger one-banned-food' style='margin: 2px' data-id=" + data.id + ">"+data.name+"</button>");
       $("#banned-food-list").append(button);
       attachDeleteFoodClickHandler();
-      return $("input").val("");
+      return $("input #click-me").val("");
     }).on("ajax:error", function(e, xhr, status, error) {
     
     return $("#banned-food-list").append("<p>You have already banned that food.</p>");

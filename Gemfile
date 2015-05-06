@@ -38,7 +38,7 @@ group :development, :test do
   gem "launchy"
   gem "pry"
   gem "rspec-rails"
-  gem "spring"
+  gem "spring", "1.3.5"
   gem "web-console", "~> 2.0"
   gem "awesome_print"
   gem "factory_girl_rails"

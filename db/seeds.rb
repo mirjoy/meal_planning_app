@@ -20,15 +20,23 @@ class Seeds
 	end
 
 	def generate_allergies
-		%w(Dairy Egg Gluten Peanut Seafood Sesame Soy Sulfite Tree Nut Wheat).each do |allergy|
-			Allergy.create(name: allergy)
-		end
+		Allergy.create(name: "Dairy", meta_value: "396^Dairy-Free")
+		Allergy.create(name: "Gluten", meta_value: "393^Gluten-Free")
+		Allergy.create(name: "Peanut", meta_value: "394^Peanut-Free")
+		Allergy.create(name: "Sesame", meta_value: "399^Sesame-Free")
+		Allergy.create(name: "Soy", meta_value: "400^Soy-Free")
+		Allergy.create(name: "Sulfite", meta_value: "401^Sulfite-Free")
+		Allergy.create(name: "Tree Nut", meta_value: "395^Tree Nut-Free")
+		Allergy.create(name: "Wheat", meta_value: "392^Wheat-Free")
 	end
 
 	def generate_diets
-		%w(Lacto-vegetarian Ovo-vegetarian Pescetarian Vegan Vegetarian).each do |diet|
-			Diet.create(name: diet)
-		end
+		Diet.create(name: "Paleo", meta_value: "403^Paleo")
+		Diet.create(name: "Lacto-vegetarian", meta_value: "388^Lacto%20vegetarian")
+		Diet.create(name: "Ovo-vegetarian", meta_value: "389^Ovo%20vegetarian")
+		Diet.create(name: "Pescetarian", meta_value: "390^Pescetarian")
+		Diet.create(name: "Vegan", meta_value: "386^Vegan")
+		Diet.create(name: "Vegetarian", meta_value: "387^Lacto-ovo%20vegetarian")
 	end
 
 	def generate_cuisines

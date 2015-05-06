@@ -51,4 +51,16 @@ class CurrentUser
 	def update(params)
 		user.update(params)
 	end
+
+	def cuisines
+		user.cuisines
+	end
+
+	def diets
+		user.diets
+	end
+
+	def allergies
+		user.allergies
+	end
 end
