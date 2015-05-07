@@ -1,6 +1,6 @@
 require 'URI'
 
-class MealService 
+class MealService
 	attr_reader :current_user, :connection, :meal_requirements
 
 	def initialize(current_user)
@@ -21,7 +21,7 @@ class MealService
 			req.params['allowedAllergy'] = set_allergies
 			req.params['allowedDiet'] = set_diets
 		end
-		binding.pry
+
 		JSON.parse(api_req.body)
 	end
 
