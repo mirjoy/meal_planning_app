@@ -1,3 +1,5 @@
+require 'URI'
+
 class MealService 
 	attr_reader :current_user, :connection, :meal_requirements
 
@@ -7,33 +9,19 @@ class MealService
 	end
 
 	def meals
-		# api_req = connection.get do |req|
-		# 	req.params['q='] = 'main'
-		# 	req.params['requirePictures='] = true
-		# 	req.params['allowedCourse[]=course'] = "^course-Main-Dishes"
-		# 	req.params['excludedCourse[]=course'] = "^course-Appetizers"
-		# 	req.params['excludedCourse[]=course'] = "^course-Beverages"
-		# 	req.params['excludedCourse[]=course'] = "^course-Condiments%20and%20Sauces"
-		# 	req.params['excludedIngredient[]='] = ban_foods
-		# 	req.params['excludedCuisine[]=cuisine^cuisine-'] = ban_cuisines
-		# 	req.params['allowedAllergy[]='] = set_allergies
-		# 	req.params['allowedDiet[]='] = set_diets
-		# end
-
 		api_req = connection.get do |req|
-			req.params['q'] 							= 'main'
+			req.params['q'] = 'main'
 			req.params['requirePictures'] = true
-			req.params['allowedCourse[]'] = ["course^course-Main-Dishes", "course^course-Appetizers"]
-			req.params['excludedCourse[]=course'] = "^course-Appetizers"
-			# req.params['excludedCourse[]=course'] = "^course-Beverages"
-			# req.params['excludedCourse[]=course'] = "^course-Condiments%20and%20Sauces"
-			# req.params['excludedIngredient[]='] = ban_foods
-			# req.params['excludedCuisine[]=cuisine^cuisine-'] = ban_cuisines
-			# req.params['allowedAllergy[]='] = set_allergies
-			# req.params['allowedDiet[]='] = set_diets
+			req.params['allowedCourse'] = "course^course-Main-Dishes"
+			req.params['excludedCourse'] = "course^course-Appetizers"
+			req.params['excludedCourse'] = "course^course-Beverages"
+			req.params['excludedCourse'] = "course^course-Condiments%20and%20Sauces"
+			req.params['excludedIngredient'] = ban_foods
+			req.params['excludedCuisine'] = ban_cuisines
+			req.params['allowedAllergy'] = set_allergies
+			req.params['allowedDiet'] = set_diets
 		end
 
-		binding.pry
 		JSON.parse(api_req.body)
 	end
 
@@ -42,7 +30,7 @@ class MealService
 	end
 
 	def ban_cuisines
-		current_user.cuisines.map { |cuisine| cuisine.name.gsub(" ", "-") }		
+		current_user.cuisines.map { |cuisine| "cuisine^cuisine-" + cuisine.name.gsub(" ", "-") }		
 	end
 
 	def set_diets
