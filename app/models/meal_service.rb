@@ -1,5 +1,3 @@
-require 'URI'
-
 class MealService
 	attr_reader :current_user, :connection, :meal_requirements
 
