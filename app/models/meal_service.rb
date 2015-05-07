@@ -25,20 +25,24 @@ class MealService
 		JSON.parse(api_req.body)
 	end
 
+	def updated_user
+		User.find(current_user.id)		
+	end
+
 	def ban_foods
-		current_user.banned_foods.map { |food| food.name.gsub(" ", "%20") }
+		updated_user.banned_foods.map { |food| food.name.gsub(" ", "%20") }
 	end
 
 	def ban_cuisines
-		current_user.cuisines.map { |cuisine| "cuisine^cuisine-" + cuisine.name.gsub(" ", "-") }		
+		updated_user.cuisines.map { |cuisine| "cuisine^cuisine-" + cuisine.name.gsub(" ", "-") }		
 	end
 
 	def set_diets
-		current_user.diets.map { |diet| diet.meta_value }
+		updated_user.diets.map { |diet| diet.meta_value }
 	end
 
 	def set_allergies
-		current_user.allergies.map { |allergy| allergy.meta_value }
+		updated_user.allergies.map { |allergy| allergy.meta_value }
 	end
 end
 

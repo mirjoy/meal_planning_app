@@ -24,7 +24,7 @@ $(document).ready(function(){
       linkAllergyToCurrentUser(allergyName);
     }
     else{
-      $(this).addClass("btn-hate-it")
+      $(this).addClass("btn-hate-it");
       unlinkAllergyFromCurrentUser($(this).attr("data-id"));
     }
   });
@@ -36,7 +36,7 @@ $(document).ready(function(){
       linkDietToCurrentUser(dietName);
     }
     else{
-      $(this).addClass("btn-hate-it")
+      $(this).addClass("btn-hate-it");
       unlinkDietFromCurrentUser($(this).attr("data-id"));
     }
   });
@@ -48,7 +48,7 @@ $(document).ready(function(){
       linkCuisineToCurrentUser(cuisineName);
     }
     else{
-      $(this).addClass("btn-hate-it")
+      $(this).addClass("btn-hate-it");
       unlinkCuisineFromCurrentUser($(this).attr("data-id"));
     }
   });
