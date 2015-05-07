@@ -7,6 +7,5 @@ class AllergiesController < ApplicationController
 
 	def destroy
 		UserAllergy.find_by(allergy_id: params[:id], user_id: current_user.id).destroy
-		render :new
 	end
 end

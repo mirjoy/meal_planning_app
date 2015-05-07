@@ -6,9 +6,11 @@ class MealsController < ApplicationController
 
 	def new
 		@banned_foods = current_user.banned_foods
-		@allergies = Allergy.all
+		@allergies = (Allergy.all - current_user.allergies	)
 		@diets = Diet.all
     @cuisines = Cuisine.all
+
+    @button_class = "btn-danger"
 	end
 
 	def create
@@ -33,5 +35,13 @@ class MealsController < ApplicationController
 				ingredient.name
 			end
 		end).flatten.uniq.sort
+	end
+
+	def user_hatred_status(food_thing)
+		if user.(food_thing.pluralize).includes?(food_thing)
+			"btn-danger"
+		else
+			"btn-hate-it"
+		end
 	end
 end

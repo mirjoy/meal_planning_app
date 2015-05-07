@@ -10,8 +10,7 @@ RSpec.describe "user tries to create an account", type: :feature do
 		fill_in "user[password_confirmation]", with: user.password    
 		click_link_or_button("Submit")
 
-		expect(page).to have_content(user.user_name)
-		expect(page).to have_content("Favorites")
+		expect(page).to have_content("Plan Your Meals")
 		expect(ActionMailer::Base.deliveries.length).to eq(1)
   end
 

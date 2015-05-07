@@ -43,4 +43,24 @@ class CurrentUser
 	def phone_number
 		user.phone_number
 	end
+
+	def errors
+		user.errors
+	end
+
+	def update(params)
+		user.update(params)
+	end
+
+	def cuisines
+		user.cuisines
+	end
+
+	def diets
+		user.diets
+	end
+
+	def allergies
+		user.allergies
+	end
 end

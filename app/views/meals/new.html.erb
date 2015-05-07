@@ -28,21 +28,35 @@
 					<div class="col-xs-12 hated-food hidden" id="allergy">
 						<% @allergies.each do |allergy| %>
 							<button type="button" class="btn btn-hate-it" data-id="<%= allergy.id %>">
-								<%= allergy.name %></button>
+									<%= allergy.name %></button>
+						<% end %>
+						<% current_user.allergies.each do |allergy| %>
+							<button type="button" class="btn btn-danger" data-id="<%= allergy.id %>">
+							<%= allergy.name %></button>
 						<% end %>
 					</div>
 
 					<div class="col-xs-12 hated-food hidden" id="diet">
 					 	<% @diets.each do |diet| %>
-							<button type="button" class="btn btn-hate-it" data-id="<%= diet.id %>">
+					 		<%if current_user.diets.include?(diet) %>
+								<button type="button" class="btn btn-danger" data-id="<%= diet.id %>">
 								<%= diet.name %></button>
+								<% else %>
+								<button type="button" class="btn btn-hate-it" data-id="<%= diet.id %>">
+								<%= diet.name %></button>
+							<% end %>	
 						<% end %>	 	
 					</div>
 
 					<div class="col-xs-12 hated-food hidden" id="cuisine">
 					 	<% @cuisines.each do |cuisine| %>
-							<button type="button" class="btn btn-hate-it" data-id="<%= cuisine.id %>">
+							<%if current_user.cuisines.include?(cuisine) %>
+								<button type="button" class="btn btn-danger" data-id="<%= cuisine.id %>">
 								<%= cuisine.name %></button>
+							<% else %>
+								<button type="button" class="btn btn-hate-it" data-id="<%= cuisine.id %>">
+								<%= cuisine.name %></button>
+							<% end %>
 						<% end %>	 	
 					</div>
 				</div>

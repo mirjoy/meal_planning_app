@@ -31,7 +31,7 @@ class UsersController < ApplicationController
   end
 
   def show
-  	if !current_user
+  	if current_user.user_name.nil?
       flash[:danger] = "You are not authorized to access this page"
       redirect_to root_path
   	end

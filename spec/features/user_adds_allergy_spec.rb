@@ -11,12 +11,24 @@ RSpec.describe "user can add allergy", type: :feature, js: true do
 		user_logs_in
 
 		visit new_meal_path
-		save_and_open_page
 		click_link_or_button("Add An Allergy")
 		click_link_or_button("Dairy")
-
 		within("#allergy") do
-			expect(page).to have_css("button.btn-danger")
+			expect(page).to have_css(".btn-danger")
+		end
+		expect(current_path).to eq(new_meal_path)
+	end
+
+	it "can delete an allergy" do
+		allergy = create(:allergy)
+		user_logs_in
+
+		visit new_meal_path
+		click_link_or_button("Add An Allergy")
+		click_link_or_button("Dairy")
+		click_link_or_button("Dairy")
+		within("#allergy") do
+			expect(page).not_to have_css(".btn-danger")
 		end
 	end
 end

@@ -19,7 +19,3 @@ class ActiveRecord::Base
     @@shared_connection || retrieve_connection
   end
 end
-
-def user_logs_in
-	
-end

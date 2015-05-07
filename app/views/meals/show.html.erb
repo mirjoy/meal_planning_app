@@ -13,16 +13,12 @@
 			<div class="col-sm-6 text-left">
 				<h2><%= meal.name %></h2>
 				<h4>Ingredients:</h4>
-					<ul>
-						<% meal.ingredients.each do |ingredient| %>
-							<li><%= ingredient.name %></li>
-						<% end %>
-					</ul>
-					<p><%= link_to "Full Instructions", "http://www.yummly.com/recipe/#{meal.yummly_id}", class: "btn btn-dark" %></p>
-				<div class="btn-group">
-					<button type="button" class="btn btn-try-again">Find Another Recipe</button>	
-					<button type="button" class="btn btn-hate-it">Ban This Recipe</button>
-				</div>
+				<ul>
+					<% meal.ingredients.each do |ingredient| %>
+						<li><%= ingredient.name %></li>
+					<% end %>
+				</ul>
+				<p><%= link_to "Full Instructions", "http://www.yummly.com/recipe/#{meal.yummly_id}", class: "btn btn-dark" %></p>
 			</div>
 		</div>
 	<% end %>
@@ -34,6 +30,4 @@
 			<% end %><br>
 		<button type="button" class="btn btn-dark">Export to Wunderlist</button>	
 	</div>
-
-
 </div>

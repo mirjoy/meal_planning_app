@@ -17,14 +17,39 @@ $(document).ready(function(){
     });
   };
 
-  $(".hated-food").find("button").on("click", function(){
+  $("#allergy").find("button").on("click", function(){
     $(this).toggleClass("btn-danger");
     var allergyName = $(this).text().trim();
     if($(this).hasClass("btn-danger")){
       linkAllergyToCurrentUser(allergyName);
     }
     else{
+      $(this).addClass("btn-hate-it");
       unlinkAllergyFromCurrentUser($(this).attr("data-id"));
+    }
+  });
+
+  $("#diet").find("button").on("click", function(){
+    $(this).toggleClass("btn-danger");
+    var dietName = $(this).text().trim();
+    if($(this).hasClass("btn-danger")){
+      linkDietToCurrentUser(dietName);
+    }
+    else{
+      $(this).addClass("btn-hate-it");
+      unlinkDietFromCurrentUser($(this).attr("data-id"));
+    }
+  });
+
+  $("#cuisine").find("button").on("click", function(){
+    $(this).toggleClass("btn-danger");
+    var cuisineName = $(this).text().trim();
+    if($(this).hasClass("btn-danger")){
+      linkCuisineToCurrentUser(cuisineName);
+    }
+    else{
+      $(this).addClass("btn-hate-it");
+      unlinkCuisineFromCurrentUser($(this).attr("data-id"));
     }
   });
 
@@ -36,7 +61,7 @@ $(document).ready(function(){
       var button = $("<button type='button' class='btn btn-danger one-banned-food' style='margin: 2px' data-id=" + data.id + ">"+data.name+"</button>");
       $("#banned-food-list").append(button);
       attachDeleteFoodClickHandler();
-      return $("input").val("");
+      return $("input #click-me").val("");
     }).on("ajax:error", function(e, xhr, status, error) {
     
     return $("#banned-food-list").append("<p>You have already banned that food.</p>");
@@ -55,7 +80,6 @@ $(document).ready(function(){
      });
     }
 
-
    function linkAllergyToCurrentUser(allergyName){
       $.ajax ({
         method: "POST",
@@ -64,14 +88,42 @@ $(document).ready(function(){
       });
     }
 
-
-    function unlinkAllergyFromCurrentUser(allergyId){
+   function unlinkAllergyFromCurrentUser(allergyId){
       $.ajax ({
         method: "DELETE",
         url: "/allergies/" + allergyId
       });
     }
+
+    function linkDietToCurrentUser(dietName){
+      $.ajax ({
+        method: "POST",
+        url: "/diets",
+        data: { diet: { name: dietName } }
+      });
+    }
+
+    function unlinkDietFromCurrentUser(dietId){
+      $.ajax ({
+        method: "DELETE",
+        url: "/diets/" + dietId
+      });
+    }
     
+    function linkCuisineToCurrentUser(cuisineName){
+      $.ajax ({
+        method: "POST",
+        url: "/cuisines",
+        data: { cuisine: { name: cuisineName } }
+      });
+    }
+
+    function unlinkCuisineFromCurrentUser(cuisineId){
+      $.ajax ({
+        method: "DELETE",
+        url: "/cuisines/" + cuisineId
+      });
+    }
     
    attachDeleteFoodClickHandler();
 });

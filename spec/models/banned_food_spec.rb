@@ -26,4 +26,6 @@ RSpec.describe BannedFood, type: :model do
     new_food2.save
     expect(new_food2.id).to eq(nil)
   end
+
+  it { should have_many(:users) }
 end

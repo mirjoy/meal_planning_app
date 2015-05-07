@@ -9,10 +9,9 @@ RSpec.describe "user tries to login", type: :feature do
   it "can sign in with Facebook account and receive a welcome email" do
     user_logs_in_with_facebook
 
-    expect(page).to have_content("Miriam Joy")
+    expect(page).to have_content("Plan Your Meals")
     expect(page).to have_content("Log Out")
 
-    # expect(current_email.subject).to eq("Thanks for joining Delistcious!")
     expect(ActionMailer::Base.deliveries.length).to eq(1)
 
     clear_emails
@@ -23,7 +22,8 @@ RSpec.describe "user tries to login", type: :feature do
     click_link_or_button("Log Out")
     user_logs_in_with_facebook
 
-    expect(ActionMailer::Base.deliveries.length).to eq(0)
+    expect(ActionMailer::Base.deliveries.length).to eq(1)
+    clear_emails
   end 
 
   xit "is notified if trying to sign in with email when they initially signed up with facebook" do

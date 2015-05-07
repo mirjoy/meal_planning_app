@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/thoughtbot/shoulda-matchers.git
+  revision: ae77c7d736664876ddea726beee92c7888090783
+  specs:
+    shoulda-matchers (3.0.0.alpha)
+      activesupport (>= 4.0.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -216,7 +223,7 @@ GEM
       simplecov-html (~> 0.9.0)
     simplecov-html (0.9.0)
     slop (3.6.0)
-    spring (1.3.4)
+    spring (1.3.5)
     sprockets (2.12.3)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -276,7 +283,8 @@ DEPENDENCIES
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   selenium-webdriver
+  shoulda-matchers!
   simplecov
-  spring
+  spring (= 1.3.5)
   uglifier (>= 1.3.0)
   web-console (~> 2.0)
