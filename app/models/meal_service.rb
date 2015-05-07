@@ -21,7 +21,7 @@ class MealService
 			req.params['allowedAllergy'] = set_allergies
 			req.params['allowedDiet'] = set_diets
 		end
-
+		binding.pry
 		JSON.parse(api_req.body)
 	end
 
